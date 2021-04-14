@@ -187,7 +187,7 @@ export default class Landing extends Component {
               : "Registry"
             }
           </button>
-          Have Already Registered?<a href="http://localhost:3000/login">Login</a>
+          Have Already Registered?<a classname='home_sign_in' href="http://localhost:3000/login">Login</a>
             </div>
         </div>
       </div>

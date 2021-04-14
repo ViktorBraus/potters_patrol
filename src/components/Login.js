@@ -57,7 +57,7 @@ export default class login extends Component {
     render = () => {
       const { sendingEmail } = this.state
       return( 
-        <form 
+        <form className='login'
         ref={form => this.form = form}>
          <div className='wrapper'>
         <div className='form-wrapper'>
@@ -81,12 +81,14 @@ export default class login extends Component {
               required />
             </div>
             <div className='submit'>
+            <label><a href="http://localhost:3000/registry">Haven`t registred? Sign up</a></label>
             <button type='submit' className='but' disabled={sendingEmail}>
             {sendingEmail 
               ? <Spinner size='lg' spinning='spinning' /> 
               : "Login"
             }
           </button>
+          
     </div>
     </div>
     </div>
