@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "LoraRegular";  
+    src: url("../../fonts/Lora-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+    } 
+.Passed
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height:37px;
+    width: 6em;
+    font-family: "LoraRegular";  
+    font-size: 48px;
+    color: #AB9C9C;
+}
+.testSection
+{
+  padding-top: 0px;
+  width: 100%;
+  height: 1044px;
+  background: url(../../images/book.jpg);
+  opacity: 0.8;
+  background-position: center;
+  background-size: cover;
+}

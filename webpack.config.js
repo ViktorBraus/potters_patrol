@@ -1,5 +1,7 @@
+
 const path = require('path');
-/* export default {
+
+module.exports = {
     mode: 'development',
     resolve: {
         extensions: ['.js', '.jsx']
@@ -12,6 +14,12 @@ const path = require('path');
             }
         ]
     },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+        alias: {
+            '@': path.resolve(__dirname, 'src/'),
+        }
+    },
     devServer: {
         historyApiFallback: true
     },
@@ -21,9 +29,4 @@ const path = require('path');
             apiUrl: 'http://localhost:4000'
         })
     }
-}  */
-export const API_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://react-email-confirm-server.now.sh'
-  : 'http://localhost:8080'
-
-  
+}

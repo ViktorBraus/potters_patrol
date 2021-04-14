@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { notify } from 'react-notify-toast'
-import Spinner from './Spinner'
-import { API_URL } from '../config'
-import '../App.css';
+import Spinner from '../Home/Spinner'
+import { API_URL } from '../../config'
+import '../../App.css';
 
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 const validateForm = (errors) => {

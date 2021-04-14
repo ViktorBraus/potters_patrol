@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import '../App.css';
+import '../../App.css';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
 import Notifications from 'react-notify-toast'
 
 import Landing from './Landing'
 import Confirm from './Confirm'
-import Spinner from './Spinner'
-import { API_URL } from '../config'
+import Spinner from '../Home/Spinner'
+import { API_URL } from '../../config'
 
 class App extends Component {
   render() {
