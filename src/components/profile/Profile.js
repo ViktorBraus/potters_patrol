@@ -96,16 +96,16 @@ class Profile extends Component {
                         <input required name="email" type="email" />
                     </div>
                     <div className="fullName">
-                        <label htmlFor="password">Username</label>
-                        <input required name="password" type="password" />
+                        <label htmlFor="name">Username</label>
+                        <input required name="name" type="name" />
                     </div>
                     <div className="password">
-                        <label htmlFor="email">Password</label>
-                        <input required name="email" type="email" />
+                        <label htmlFor="passwordl">Password</label>
+                        <input required name="password" type="password" />
                     </div>
                     <div className="repeatpassword">
-                        <label htmlFor="email">Repeat Password</label>
-                        <input required name="email" type="email" />
+                        <label htmlFor="password">Repeat Password</label>
+                        <input required name="password" type="password" />
                     </div>
                     <div className="change">
                         <button  className='butaa' type="submit" >Change</button>

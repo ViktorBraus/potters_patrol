@@ -10,6 +10,15 @@ class TestSection extends Component
                 Passed Tests
             </label>
             <div className='testSection'>
+                <br/>
+                <div className='testdiv'>
+                    <label className='testvariantiv'><ul><li><img></img></li><li><img></img></li><li><img></img></li></ul></label>
+                </div>
+                <div>
+                    <button className='buttontest'>
+                        Create an own Test
+                    </button>
+                </div>
             </div>
             </div>
         )
