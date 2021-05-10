@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
 import Notifications from 'react-notify-toast'
 import Spinner from '../Home/Spinner' 
 import { API_URL } from '../../config'
+import {withAuth} from '../../Auth'
+
 
 class App extends Component {
   render() {
@@ -20,6 +22,8 @@ class Home extends Component {
     loading: true
   }
   componentDidMount = () => {
+    const {handleAuthentication} = this.props;
+    if(handleAuthentication){handleAuthentication()}
     fetch(`${API_URL}/wake-up`)
       .then(res => res.json())
       .then(() => {
@@ -62,4 +66,4 @@ class Home extends Component {
   }
 }
 render(<App />, document.getElementById('root'));
-export default App;
+export default withAuth(Home);

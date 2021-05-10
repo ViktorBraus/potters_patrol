@@ -11,8 +11,6 @@ class App extends Component {
     );
   }
 }
-
-
 class Profile extends Component {
     
     constructor(props) {
