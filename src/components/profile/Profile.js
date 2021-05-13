@@ -2,21 +2,63 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import '../../App.css';
 import TestSection from './TestSection'
-import Spinner from '../Home/Spinner' 
+import Spinner from '../Home/Spinner'
 import { API_URL } from '../../config'
+import { useAuth0 } from "@auth0/auth0-react";
+import User from '../Authentication/User'
 class App extends Component {
   render() {
     return (
-      <Profile className='Profile'/>
+      <Profile className='Profile' />
     );
   }
 }
+const Photo = () =>
+{
+  const {isLoading, user} = useAuth0();
+  return(
+    <img className='imgpre' src={isLoading ? null : user.picture}></img>
+  )
+}
+const Accaunt = () =>
+    {
+      const {isLoading, isAuthenticated, user} = useAuth0();
+      return(
+      <div className='account'>
+      <form>
+        <div className='wrapper1'>
+          <div className='form-wrapper1'>
+            <div className="email">
+              <label htmlFor="email">E-mail</label>
+              <input required name="email" type="email"  placeholder={isAuthenticated ? user.email : ""}/>
+            </div>
+            <div className="fullName">
+              <label htmlFor="name">Username</label>
+              <input required name="name" type="name" placeholder={isAuthenticated ? user.nickname : ""}/>
+            </div>
+            <div className="password">
+              <label htmlFor="passwordl">Password</label>
+              <input required name="password" type="password" />
+            </div>
+            <div className="repeatpassword">
+              <label htmlFor="password">Repeat Password</label>
+              <input required name="password" type="password" />
+            </div>
+            <div className="change">
+              <button className='butaa' type="submit" >Change</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+      )
+    }
+
 class Profile extends Component {
-    
-    constructor(props) {
-        super(props);
-        this.state = {file: '',imagePreviewUrl: ''};
-      }
+  constructor(props) {
+    super(props);
+    this.state = { file: ''};
+  }
   state = {
     loading: true
   }
@@ -51,75 +93,49 @@ class Profile extends Component {
   }
 
   render = () => {
-    let {imagePreviewUrl} = this.state;
+    let { imagePreviewUrl } = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
-        $imagePreview = (<img className='imgpre' src={imagePreviewUrl} />);
-      } else {
-        $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
-      }
-    const content = () => {
-
-      if (this.state.loading) 
-      {
-        return <div className='spinner'><Spinner size='10x' spinning='spinning' /><br/></div>
+      $imagePreview = (<img className='imgpre' src={imagePreviewUrl}></img> );
+    }
+    else {
+      $imagePreview = (<Photo/>);
+    }
+    
+    const Content = () => {
+      if (this.state.loading) {
+        return <div className='spinner'><Spinner size='10x' spinning='spinning' /><br /></div>
       }
       return (
         <div className='Profile'>
-            <div className='profileinformation'>
+          <div className='profileinformation'>
             <ul className='nav'>
-            <li>
-            <label className ='NameOfFaculty'></label><br/><button className='but'>Name of Faculty</button>
-            </li>
-            <li>
-            <div className="EditPhoto">{$imagePreview}</div><br/>
-            <input className ='buta' type="file" 
-            onChange={(e)=>this._handleImageChange(e)} />
-            </li>
-            <li>
-            <label className ='Patronus'></label><br/><button className='but'>Patronus</button>
-            </li>
-            <li>
-            <label className ='Wand'></label><br/><button className='but'>Wand</button>
-            </li>
+              <li>
+                <label className='NameOfFaculty'></label><br /><button className='but'>Name of Faculty</button>
+              </li>
+              <li>
+                <div className="EditPhoto">{$imagePreview}</div><br />
+                <input className='buta' type="file"
+                  onChange={(e) => this._handleImageChange(e)} />
+              </li>
+              <li>
+                <label className='Patronus'></label><br /><button className='but'>Patronus</button>
+              </li>
+              <li>
+                <label className='Wand'></label><br /><button className='but'>Wand</button>
+              </li>
             </ul>
-            </div>
-            <br/>
-            <div className='account'>
-                <form>
-                  <div className='wrapper1'>
-                  <div className='form-wrapper1'>
-                    <div className="email">
-                        <label htmlFor="email">E-mail</label>
-                        <input required name="email" type="email" />
-                    </div>
-                    <div className="fullName">
-                        <label htmlFor="name">Username</label>
-                        <input required name="name" type="name" />
-                    </div>
-                    <div className="password">
-                        <label htmlFor="passwordl">Password</label>
-                        <input required name="password" type="password" />
-                    </div>
-                    <div className="repeatpassword">
-                        <label htmlFor="password">Repeat Password</label>
-                        <input required name="password" type="password" />
-                    </div>
-                    <div className="change">
-                        <button  className='butaa' type="submit" >Change</button>
-                    </div>
-                    </div>
-                    </div>
-                </form>
-        </div>
+          </div>
+          <br />
+        <Accaunt/>
         </div>
       )
     }
     return (
       <div>
         <main>
-          {content()}
-          <TestSection/>
+          {Content()}
+          <TestSection />
         </main>
       </div>
     )
