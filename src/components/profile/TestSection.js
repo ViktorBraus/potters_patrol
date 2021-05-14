@@ -5,21 +5,24 @@ class TestSection extends Component
 {
     render = () => {
         return(
-            <div>
-                <label className ='Passed'>
-                Passed Tests
-            </label>
-            <div className='testSection'>
+            <div className = 'testSection'>
                 <br/>
-                <div className='testdiv'>
-                    <label className='testvariantiv'><ul><li><img></img></li><li><img></img></li><li><img></img></li></ul></label>
+                 <div className='testvariantiv'>
+                <div className='ull1'>
+                        <br />
                 </div>
+                <div className='ull1'>
+                        <br />
+                </div>
+                <div className='ull1'>
+                        <br />
+                </div>
+            </div>
                 <div>
                     <button className='buttontest'>
                         Create an own Test
                     </button>
                 </div>
-            </div>
             </div>
         )
     }

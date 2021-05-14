@@ -6,6 +6,7 @@ import Regisgtry from './components/Authentication/Registry/Registry'
 import Profile from './components/profile/Profile'
 import Navbar from './navbar'
 import footer from './footer'
+import Content from './components/content/Content'
 import './App.css'
 import HomeAfter from './components/Home/HomeAfter'
 import {useAuth0} from "@auth0/auth0-react"
@@ -16,6 +17,7 @@ const App = () =>{
       return (
         <BrowserRouter>
           <Switch>
+            <Route path='/Content' component={Content} />
             <Route path='/HomeAfter' component={HomeAfter} />
             <Route path='/registry' component={Regisgtry} />
             <Route path='/login' component={Login} />
@@ -33,7 +35,7 @@ const App = () =>{
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         </head>
         {Navbar()}
-        <main>          
+        <main>    
           {content()}
         </main>
         {footer()}

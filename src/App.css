@@ -2,7 +2,21 @@
 #AB9C9C - основной цвет текста
 #3B2024 - цвет фона
 Шрифт - Lora*/
-
+.textstyling 
+{
+    color: #ab9c9cd2;
+    font-size: 60px;
+    font-family: Lora;
+    text-align: center;
+}
+.textstyling > a{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #ffffff;
+    font-size: 60px;
+    font-family: Lora;
+}
 body {
     font-family: "LoraRegular";
     width: auto;
@@ -23,15 +37,12 @@ a:focus,
 a:hover {
     color: #8d7e7e;
 }
-
-
 /*MENU STYLING*/
 
 .facultyimage {
     width: 65px;
     height: 65px;
     float: left;
-    margin-left: -200px;
     border-radius: 76.5px;
     border: none;
     background: url(./images/герб.png);
@@ -43,33 +54,62 @@ a:hover {
     width: 35px;
     height: 35px;
     float: left;
-    margin-top: 15px;
+    margin-top: 0px;
     padding-top: 30px;
-    margin-left: -270px;
     border: none;
     background: url(./images/punkts.png);
     background-position: center;
     background-size: cover;
     display: none;
 }
-
 .logo {
+    position:sticky;
     font-family: "LoraRegular";
-    height: 70px;
-    background: rgba(206, 168, 168, 0.25);
+    width: 100%;
+    top:0;
+    background: #3B2024;
+    margin-bottom: 2px;
     font-family: Lora;
     font-size: 55px;
-    padding-left: 280px;
-    padding-top: 5px;
     text-align: center;
     color: #AB9C9C;
-    margin-bottom: 15px;
-    /*Если убрать - не будет отсутпа между меню и основой*/
-}
+    }
 
 button:hover {
     background-color: #1a1a1f;
     color: #ffffff;
+}
+
+.but {
+    transition: 0.2s linear;
+    font-family: "LoraRegular";
+    min-width: 100%;
+    cursor: pointer;
+    margin-right: 0.25em;
+    margin-top: 0.5em;
+    padding: 0.938em;
+    border: none;
+    background: rgba(227, 227, 227, 0.2);
+    border-radius: 10px;
+    color: #fefefe;
+}
+.labell
+{
+    width: 300px;
+    font-size: 34px;
+    background-color: #a19898;
+    color: rgb(219, 219, 219);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.profileinformation
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
 }
 
 .nav {
@@ -80,7 +120,6 @@ button:hover {
     float: right;
     font-size: 0;
 }
-
 .nav li {
     height: 55px;
     display: inline-block;
@@ -196,6 +235,7 @@ footer {
 }
 
 .HomePage {
+    
     border-radius: 3px;
     height: 100%;
     width: 100%;
@@ -287,13 +327,9 @@ label {
 
 input {
     padding: 10px 10px;
-    border-radius: 5px;
-    outline: none;
     background: rgba(227, 227, 227, 0.2);
     border-radius: 10px;
     color: #DAD9D9;
-    align-items: center;
-    justify-content: center;
 }
 
 .input::placeholder {
@@ -407,7 +443,6 @@ form {
         float: left;
         margin-top: 15px;
         padding-top: 5px;
-        margin-left: -270px;
         border: none;
         background: url(./images/punkts.png);
         background-position: center;
@@ -420,7 +455,6 @@ form {
         float: left;
         margin-top: 15px;
         padding-top: 5px;
-        margin-left: -270px;
         border: none;
         background: url(./images/punkts.png);
         background-position: center;
@@ -433,11 +467,16 @@ form {
         float: left;
         margin-top: 15px;
         padding-top: 5px;
-        margin-left: -270px;
         border: none;
         background: url(./images/punkts.png);
         background-position: center;
         background-size: cover;
+    }
+    .menucursor:checked~.logo
+    {
+
+        height: 100%;
+        width: 100%;
     }
     .settingsbutton {
         width: 35px;
@@ -450,8 +489,13 @@ form {
     .logo>ul {
         display: none;
     }
+    .logo
+    {
+        background-color: #3B2024;
+    }
     .menucursor:checked~ul {
-        padding-top: 1px;
+        height: 100%;
+        padding-top: 0px;
         display: inline-flex;
         flex-direction: column;
     }
@@ -465,108 +509,63 @@ form {
 
 .Profile {
     width: 100%;
-    height:fit-content;
+    height:100%;
     background: url(./images/profilebackground1.jpg);
     background-position: center;
     background-size: cover;
 }
 
-.profileinformation>.nav {
-    float: right;
-}
-
-.profileinformation>.nav>li {
-    padding-top: 10px;
-    padding-left: 80px;
-    padding-right: 90px;
-}
-
-.profileinformation>.nav>li>input[type="file"]:hover {
-    background-color: #746a6a;
+.butaa {
+    width: 300px;
+    background-color: #a19898;
     color: rgb(219, 219, 219);
+    border-radius: 10px;
 }
-
-.profileinformation>.nav>li>input[type="file"] {
-    padding-top: 5px;
-    height: max-content;
-    transition: 0.2s linear;
-    background-color: #AB9C9C;
-    opacity: 0.9;
-    color: rgb(0, 0, 0);
+.butaa:hover {
+    width: 300px;
+    background-color: #5a5353;
+    color: rgb(219, 219, 219);
+    border-radius: 10px;
 }
-
-.profileinformation>.nav>li>button {
-    font-family: "LoraRegular";
-    pointer-events: none;
-    transition: 0.2s linear;
-    padding-top: 3px;
-    height: 40px;
-    background-color: #AB9C9C;
-    border: none;
-    opacity: 0.9;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 30px;
-    color: rgb(0, 0, 0);
-}
-
-.NameOfFaculty {
-    float: left;
+.Wand, .NameOfFaculty, .Patronus, .EditPhoto
+{
     width: 300px;
     height: 300px;
+}
+.EditPhoto
+{
+    background-position: center;
+    background-size: cover;
+}
+.NameOfFaculty {
     background: url(./images/герб.png);
     background-position: center;
     background-size: cover;
 }
-
-.EditPhoto,
-.imgpre {
-    margin-bottom: 5px;
-    background-color: gray;
-    float: left;
-    width: 300px;
-    height: 300px;
-    border-radius: 400px;
-}
-
-.profileinformation>.nav>li>input {
-    transition: 0.2s linear;
-    padding-top: 3px;
-    height: 40px;
-    border: none;
-    opacity: 0.9;
-    color: rgb(0, 0, 0);
-}
-
 .Patronus {
-    font-size: 30px;
     color: black;
-    float: left;
-    width: 340px;
-    height: 271px;
     background: url(./images/patronus.jpg);
     background-position: center;
-    background-size: auto;
+    background-size: cover;
 }
-
 .Wand {
-    margin-top: 100px;
-    font-size: 30px;
     color: black;
-    float: left;
-    height: 200px;
-    width: 320px;
     background: url(./images/wand.jpg);
     background-position: center;
     background-size: cover;
+}
+.EditPhoto,
+.imgpre {
+    background-color: gray;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
 }
 
 .wrapper1 {
     font-size: 30px;
     text-align: center;
     text-decoration: none;
-    height: 180vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -581,34 +580,28 @@ form {
     text-align: center;
     display: flex;
     flex-direction: column;
-    width: 280px;
+    width: 300px;
     max-width: 80%;
     min-width: 100px;
     min-height: auto;
     padding: 20px 40px;
     background: #3f3a3a;
-    border-radius: 10px;
-    opacity: 0.97;
+    border-radius: 20px;
 }
 
-.butaa {
-    font-size: 40px;
-    transition: 0.2s linear;
-    font-family: "LoraRegular";
-    min-width: 50%;
-    min-height: 10%;
-    cursor: pointer;
-    margin-right: 0.25em;
-    margin-top: 0.5em;
-    padding-right: 20px;
-    padding-left: 20px;
-    border: none;
+.buta {
+    width: 200px;
     background: rgba(227, 227, 227, 0.2);
-    border-radius: 1px;
+    border-radius: 10px;
     color: #AB9C9C;
+    font-size: 30px;
 }
 
 .invalid-feedback {
     text-align: left;
     color: red;
+}
+hr
+{
+    color:#3B2024;
 }

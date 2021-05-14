@@ -45,7 +45,7 @@ const Accaunt = () =>
               <input required name="password" type="password" />
             </div>
             <div className="change">
-              <button className='butaa' type="submit" >Change</button>
+              <button className='buta' type="submit" >Change</button>
             </div>
           </div>
         </div>
@@ -108,26 +108,50 @@ class Profile extends Component {
       }
       return (
         <div className='Profile'>
+          <br/>
           <div className='profileinformation'>
-            <ul className='nav'>
-              <li>
-                <label className='NameOfFaculty'></label><br /><button className='but'>Name of Faculty</button>
-              </li>
-              <li>
-                <div className="EditPhoto">{$imagePreview}</div><br />
-                <input className='buta' type="file"
+            <div className='profilecontent'>
+              <div className="EditPhoto">
+                {$imagePreview}
+              </div>
+                <br/>
+                 <input className='butaa' type="file"
                   onChange={(e) => this._handleImageChange(e)} />
-              </li>
-              <li>
-                <label className='Patronus'></label><br /><button className='but'>Patronus</button>
-              </li>
-              <li>
-                <label className='Wand'></label><br /><button className='but'>Wand</button>
-              </li>
-            </ul>
-          </div>
-          <br />
-        <Accaunt/>
+            </div>
+            <div>
+            <Accaunt/>
+            </div>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <div className='profileinformation'>
+              <div className='profilecontent'>
+                <div className='NameOfFaculty'>
+                </div>
+                  <br />
+                <div className='labell'>
+                  Name of Faculty
+                </div>
+              </div>
+              <div className='profilecontent'>
+                <div className='Patronus'>
+                </div>
+                  <br />
+                <div className='labell'>
+                  Patronus
+                </div>
+              </div>
+              <div className='profilecontent'>
+                <div className='Wand'>
+                </div>
+                 <br />
+                <div className='labell'>
+                  Wand
+                </div>
+              </div>
+              </div>
+          <br/>
         </div>
       )
     }
@@ -135,6 +159,7 @@ class Profile extends Component {
       <div>
         <main>
           {Content()}
+          <label className='Passed'>Passed Tests</label>
           <TestSection />
         </main>
       </div>

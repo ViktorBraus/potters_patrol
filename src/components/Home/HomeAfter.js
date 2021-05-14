@@ -1,33 +1,30 @@
 import React, { Component } from 'react';
-import '../../App.css';
+import './HomeAfter.css';
 import Notifications from 'react-notify-toast'
-import LoginButton from "../Authentication/login-button"
-import LogoutButton from "../Authentication/logout-button"
-import {useAuth0} from "@auth0/auth0-react"
-
+import ContentBlock from './ContentBlock'
+import Distribution from './Distribution'
+import TestSection from './TestSection';
 
 class HomeAfter extends Component {
   state = {
     loading: true
   }
   render = () => {
-    const AuthNav = () => {
-      const {isAuthenticated} = useAuth0();
-      
-      return(
-        <div>
-          {isAuthenticated ? <LogoutButton/> : <LoginButton/>}
-        </div>
-      );
-    };
+    
     const content = () => {
       return (
-        <div className='HomePage'>
-            <div className='at_hog'>
-        Discover your Wizarding World
-        </div>
-        <AuthNav/>
-        <Notifications />
+        <div>
+          <ContentBlock/>
+          <div className='textstyling'>
+          Start your distribution and let your 
+          <br/>heart decide which faculty is yours
+          </div>
+          <Distribution/>
+          <div className='textstyling'>
+          Most popular Tests
+          </div>
+          <TestSection/>
+          <Notifications />
         </div>
       )
     }
