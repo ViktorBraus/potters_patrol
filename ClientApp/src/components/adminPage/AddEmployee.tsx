@@ -14,7 +14,7 @@ export class AddBook extends React.Component<RouteComponentProps<{}>, AddBookDat
     constructor(props) {
         super(props);
 
-        this.state = { title: "", loading: true, BookData: new BookData, path: "data:image/png;base64,"  };
+        this.state = { title: "", loading: true, BookData: new BookData, path: "data:image/png;base64,"};
 
         var bookid = this.props.match.params["bookid"];
 
@@ -29,7 +29,7 @@ export class AddBook extends React.Component<RouteComponentProps<{}>, AddBookDat
 
         // This will set state for Add employee
         else {
-            this.state = { title: "Create", loading: false, BookData: new BookData, path: "data:image/png;base64," };
+            this.state = { title: "Create", loading: false, BookData: new BookData, path: "data:image/png;base64,"};
         }
 
         // This binding is necessary to make "this" work in the callback
@@ -52,10 +52,9 @@ export class AddBook extends React.Component<RouteComponentProps<{}>, AddBookDat
     }
 
     // This will handle the submit form event.
-    private handleSave(event) {
+    public handleSave(event) {
         event.preventDefault();
         const data = new FormData(event.target);
-
         // PUT request for Edit employee.
         if (this.state.BookData.bookId) {
             fetch('/api/Book/Edit', {
@@ -85,7 +84,11 @@ export class AddBook extends React.Component<RouteComponentProps<{}>, AddBookDat
         e.preventDefault();
         this.props.history.push("/fetchemployee");
     }
-
+    fileSelectHandler = e => {
+        const param = e.target.files[0];
+        let reader = new FileReader();
+        reader.readAsDataURL(param);
+    };
     // Returns the HTML Form to the render() method.
     private renderCreateForm() {
         return (
@@ -114,7 +117,14 @@ export class AddBook extends React.Component<RouteComponentProps<{}>, AddBookDat
                <div className="form-group col">
                     <label className="control-label col-md-12" htmlFor="Department" >Book image</label>
                     <div className="col-md-4 jj">
-                        <img width="200" height="auto" alt="" src={this.state.path + this.state.BookData.book_Image} />
+                        <input
+                            hidden
+                            className="form-control"
+                            type="text"
+                            name="Book_Image"
+                            defaultValue={this.state.BookData.book_Image.toString()}
+                        />
+                        <img name='book_Image' defaultValue={this.state.BookData.book_Image} width="200" height="auto" alt="" src={this.state.path + this.state.BookData.book_Image} />
                     </div>
                 </div>
                 <br/>

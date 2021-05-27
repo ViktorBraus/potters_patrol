@@ -54,7 +54,8 @@ var Movies = /** @class */ (function (_super) {
             : this.renderBookTable(this.state.movieList);
         return React.createElement("div", null,
             React.createElement("div", { className: "linn" },
-                React.createElement(react_router_dom_1.NavLink, { to: "/" }, "\u041D\u0430 \u0433\u043E\u043B\u043E\u0432\u043D\u0443")),
+                React.createElement(react_router_dom_1.NavLink, { className: 'contentButton', to: "/" }, "\u041D\u0430 \u0433\u043E\u043B\u043E\u0432\u043D\u0443")),
+            React.createElement("br", null),
             contents);
     };
     Movies.prototype.renderBookTable = function (movieList) {

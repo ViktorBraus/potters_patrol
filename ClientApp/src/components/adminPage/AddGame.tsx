@@ -7,13 +7,14 @@ interface AddGameDataState {
     title: string;
     loading: boolean;
     GameData: GameData;
+    path: string;
 }
 
 export class AddGame extends React.Component<RouteComponentProps<{}>, AddGameDataState> {
     constructor(props) {
         super(props);
 
-        this.state = { title: "", loading: true, GameData: new GameData };
+        this.state = { title: "", loading: true, GameData: new GameData, path: "data:image/png;base64," };
 
         var gameid = this.props.match.params["gameid"];
 
@@ -28,7 +29,7 @@ export class AddGame extends React.Component<RouteComponentProps<{}>, AddGameDat
 
         // This will set state for Add employee
         else {
-            this.state = { title: "Create", loading: false, GameData: new GameData };
+            this.state = { title: "Create", loading: false, GameData: new GameData, path: "data:image/png;base64," };
         }
 
         // This binding is necessary to make "this" work in the callback
@@ -100,7 +101,7 @@ export class AddGame extends React.Component<RouteComponentProps<{}>, AddGameDat
                     </div>
                 </div >
                 <div className="form-group col">
-                    <label className="control-label col-md-12 fl" htmlFor="Gender">Game Description</label>
+                    <label className="control-label col-md-12" htmlFor="Gender">Game Description</label>
                     <div>
                         <textarea className="form-control" type="text" name="Game_description" defaultValue={this.state.GameData.game_description} required />
                     </div>
@@ -109,6 +110,19 @@ export class AddGame extends React.Component<RouteComponentProps<{}>, AddGameDat
                     <label className="control-label col-md-12 fl" htmlFor="Department" >Game url</label>
                     <div>
                         <input className="form-control" type="text" name="Game_url" defaultValue={this.state.GameData.game_url} required />
+                    </div>
+                </div>
+                <div className="form-group col">
+                    <label className="control-label col-md-12" htmlFor="Department" >Book image</label>
+                    <div className="col-md-4 jj">
+                        <input
+                            hidden
+                            className="form-control"
+                            type="text"
+                            name="Game_Image"
+                            defaultValue={this.state.GameData.game_Image.toString()}
+                        />
+                        <img name='book_Image' defaultValue={this.state.GameData.game_Image} width="200" height="auto" alt="" src={this.state.path + this.state.GameData.game_Image} />
                     </div>
                 </div>
                <br/>

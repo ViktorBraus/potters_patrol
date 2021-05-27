@@ -9,6 +9,8 @@ namespace Models
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
         public virtual DbSet<Game> Games { get; set; }
+        public virtual DbSet<QuestionDetail> QuestionDetail { get; set; }
+        public virtual DbSet<Answers> Answers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -20,7 +22,8 @@ namespace Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+            modelBuilder.Entity<Answers>()
+                .HasNoKey();
         }
     }
 }

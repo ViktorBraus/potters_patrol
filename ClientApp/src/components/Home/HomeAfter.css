@@ -39,13 +39,38 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.imga
-{
-  width: 600px;
-  height: 600px;
-  object-fit:scale-down;
-  border-radius: 100%;
-  background-color: rgba(128, 128, 128, 0.562);
+.imga {
+    width: 600px;
+    height: 600px;
+    object-fit: scale-down;
+    border-radius: 100%;
+    background-color: rgba(128, 128, 128, 0.562);
+    background-image: url('../../images/wand1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: local;
+}
+.imga1 {
+    width: 600px;
+    height: 600px;
+    object-fit: scale-down;
+    border-radius: 100%;
+    background-color: rgba(128, 128, 128, 0.562);
+    background-image: url('../../images/patronus.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:local;
+}
+.imga2 {
+    width: 600px;
+    height: 600px;
+    object-fit: scale-down;
+    border-radius: 100%;
+    background-color: rgba(128, 128, 128, 0.562);
+    background-image: url('../../images/шляпа.png');
+    background-repeat:no-repeat;
+    background-position: center;
+    background-attachment:local;
 }
 .title
 {

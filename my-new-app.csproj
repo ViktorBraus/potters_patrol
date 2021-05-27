@@ -43,6 +43,11 @@
     <TypeScriptCompile Include="ClientApp\src\components\content\content.tsx" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ClientApp\src\components\test\Новая папка\" />
+    <Folder Include="ClientApp\src\components\Новая папка\" />
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

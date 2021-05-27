@@ -1,3 +1,5 @@
+using System;
+
 public class Book
 {
     public int BookId { get; set; }
@@ -21,4 +23,18 @@ public class Game
     public byte[] Game_Image { get; set; }
     public string Game_description { get; set; }
     public string Game_url { get; set; }
+}
+
+
+public class QuestionDetail
+{
+    public int Id { get; set; }
+    public int Question_Id { get; set; }
+    public string Question { get; set; }
+}
+
+public class Answers
+{
+    public int QuestionId { get; set; }
+    public string Answer { get; set; }
 }

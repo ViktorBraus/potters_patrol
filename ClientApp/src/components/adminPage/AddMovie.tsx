@@ -7,13 +7,14 @@ interface AddMovieDataState {
     title: string;
     loading: boolean;
     MovieData: MovieData;
+    path: string;
 }
 
 export class AddMovie extends React.Component<RouteComponentProps<{}>, AddMovieDataState> {
     constructor(props) {
         super(props);
 
-        this.state = { title: "", loading: true, MovieData: new MovieData };
+        this.state = { title: "", loading: true, MovieData: new MovieData, path: "data:image/png;base64," };
 
         var movieid = this.props.match.params["movieid"];
 
@@ -28,7 +29,7 @@ export class AddMovie extends React.Component<RouteComponentProps<{}>, AddMovieD
 
         // This will set state for Add employee
         else {
-            this.state = { title: "Create", loading: false, MovieData: new MovieData };
+            this.state = { title: "Create", loading: false, MovieData: new MovieData, path: "data:image/png;base64," };
         }
 
         // This binding is necessary to make "this" work in the callback
@@ -89,7 +90,7 @@ export class AddMovie extends React.Component<RouteComponentProps<{}>, AddMovieD
     // Returns the HTML Form to the render() method.
     private renderCreateForm() {
         return (
-            <form onSubmit={this.handleSave} >
+            <form className='formchange' onSubmit={this.handleSave} >
                 <div className="form-group row" >
                     <input type="hidden" name="MovieId" value={this.state.MovieData.movieId} />
                 </div>
@@ -111,9 +112,23 @@ export class AddMovie extends React.Component<RouteComponentProps<{}>, AddMovieD
                         <input className="form-control" type="text" name="Movie_url" defaultValue={this.state.MovieData.movie_url} required />
                     </div>
                 </div>
+                <div className="form-group col">
+                    <label className="control-label col-md-12" htmlFor="Department" >Book image</label>
+                    <div className="col-md-4 jj">
+                        <input
+                            hidden
+                            className="form-control"
+                            type="text"
+                            name="Book_Image"
+                            defaultValue={this.state.MovieData.movie_Image.toString()}
+                        />
+                        <img name='book_Image' defaultValue={this.state.MovieData.movie_Image} width="200" height="auto" alt="" src={this.state.path + this.state.MovieData.movie_Image} />
+                    </div>
+                </div>
+                <br/>
                 <div className="form-group">
-                    <button type="submit" className="btn btn-default">Save</button>
-                    <button className="btn" onClick={this.handleCancel}>Cancel</button>
+                    <button type="submit" className="btn btn-default buta">Save</button>
+                    <button className="btn buta" onClick={this.handleCancel}>Cancel</button>
                 </div >
             </form >
         )

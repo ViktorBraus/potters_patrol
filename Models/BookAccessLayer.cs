@@ -94,15 +94,5 @@ namespace Models
                 throw;
             }
         }
-
-        //To Get the list of Cities  
-        //public List<TblCities> GetCities()
-        //{
-        //    List<TblCities> lstCity = new List<TblCities>();
-        //    lstCity = (from CityList in db.TblCities select CityList).ToList();
-
-        //    return lstCity;
-        //}
-
     }
 }

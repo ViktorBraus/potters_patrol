@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './HomeAfter.css';
 import Notifications from 'react-notify-toast'
 import ContentBlock from './ContentBlock'
-import Distribution from './Distribution'
+import { Distribution } from './Distribution'
 import TestSection from './TestSection';
 
 class HomeAfter extends Component {
@@ -19,7 +19,7 @@ class HomeAfter extends Component {
           Start your distribution and let your 
           <br/>heart decide which faculty is yours
           </div>
-          <Distribution/>
+              <Distribution/>
           <div className='textstyling'>
           Most popular Tests
           </div>

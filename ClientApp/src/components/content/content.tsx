@@ -53,135 +53,106 @@ export class Content extends React.Component<RouteComponentProps<{}>, ContentBoo
         
         return <div>
             <div className="linn">
-                {this.state.BookData.bookId > 0 ? < NavLink to="/Books">На головну</NavLink> :
-                 this.state.GameData.gameId > 0 ? < NavLink to="/Games">На головну</NavLink> :
-                 this.state.MovieData.movieId > 0 ? < NavLink to="/Movies">На головну</NavLink> : ""}
+                {this.state.BookData.bookId > 0 ? < NavLink className='contentButton' to="/Books">На головну</NavLink> :
+                    this.state.GameData.gameId > 0 ? < NavLink className='contentButton' to="/Games">На головну</NavLink> :
+                        this.state.MovieData.movieId > 0 ? < NavLink className='contentButton' to="/Movies">На головну</NavLink> : ""}
             </div>
+            <br/>
             {contents}
         </div>;
 
     }
     public renderBookTable() {
         return <div>
-            <table className='table1'>
-                <thead>
-                    <th key={this.state.BookData.bookId}>
-                        <td>{this.state.BookData.book_Name}</td>
-                        </th>
-                </thead>
-            </table>
-            <div className='formchange'>
-                <div className="form-group col" >
-                    <input type="hidden" name="BookId" value={this.state.BookData.bookId} />
-                </div>
-                < div className="form-group col" >
-                    <label className=" control-label col-md-12" htmlFor="Name">Book Name</label>
-                    <div className="col-md-4">
-                        <input className="form-control" type="text" name="Book_Name" defaultValue={this.state.BookData.book_Name} required />
-                    </div>
-                </div >
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Gender">Book Description</label>
-                    <div className="col-md-4">
-                        <textarea className="form-control" type="text" name="Book_description" defaultValue={this.state.BookData.book_description} required />
-                    </div>
-                </div >
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Department" >Book url</label>
-                    <div className="col-md-4 jj">
-                        <input className="form-control" type="text" name="Book_url" defaultValue={this.state.BookData.book_url} required />
-                    </div>
-                </div>
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Department" >Book image</label>
-                    <div className="col-md-4 jj">
+            <table cellSpacing={4} width="70%" className='tablecontent'>
+            <tbody>
+                <tr>
+                    <td rowSpan={2}>
                         <img width="200" height="auto" alt="" src={this.state.path + this.state.BookData.book_Image} />
+                    </td>
+                    <th>
+                        <div>
+                            <label><h1>{this.state.BookData.book_Name}</h1></label>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                <th>
+                    <div>
+                        <label>{this.state.BookData.book_description}</label>
                     </div>
-                </div>
-                <br />
-            </div >
+                </th >
+                <th>
+                            <div>
+                                <label>Корисне посилання</label><br /><br /><br />
+                            <a href={this.state.BookData.book_url}>{this.state.BookData.book_url}</a>
+                    </div>
+                </th>
+                </tr>
+                </tbody>
+                </table>
         </div>;
     }
     public renderGameTable() {
         return <div>
-            <table className='table1'>
-                <thead>
-                    <th key={this.state.GameData.gameId}>
-                        <td>{this.state.GameData.game_Name}</td>
-                    </th>
-                </thead>
+            <table cellSpacing={4} width="70%" className='tablecontent'>
+                <tbody>
+                    <tr>
+                        <td rowSpan={2}>
+                            <img width="200" height="auto" alt="" src={this.state.path + this.state.GameData.game_Image} />
+                        </td>
+                        <th>
+                            <div>
+                                <label><h1>{this.state.GameData.game_Name}</h1></label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div>
+                                <label>{this.state.GameData.game_description}</label>
+                            </div>
+                        </th >
+                        <th>
+                            <div>
+                                <label>Корисне посилання</label><br /><br /><br />
+                                <a href={this.state.GameData.game_url}>{this.state.GameData.game_url}</a>
+                            </div>
+                        </th>
+                    </tr>
+                </tbody>
             </table>
-            <div className='formchange'>
-                <div className="form-group col" >
-                    <input type="hidden" name="GameId" value={this.state.GameData.gameId} />
-                </div>
-                < div className="form-group col" >
-                    <label className=" control-label col-md-12" htmlFor="Name">Game Name</label>
-                    <div className="col-md-4">
-                        <input className="form-control" type="text" name="Game_Name" defaultValue={this.state.GameData.game_Name} required />
-                    </div>
-                </div >
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Gender">Game Description</label>
-                    <div className="col-md-4">
-                        <textarea className="form-control" type="text" name="Game_description" defaultValue={this.state.GameData.game_description} required />
-                    </div>
-                </div >
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Department" >Game url</label>
-                    <div className="col-md-4 jj">
-                        <input className="form-control" type="text" name="Game_url" defaultValue={this.state.GameData.game_url} required />
-                    </div>
-                </div>
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Department" >Game image</label>
-                    <div className="col-md-4 jj">
-                        <img width="200" height="auto" alt="" src={this.state.path + this.state.GameData.game_Image} />
-                    </div>
-                </div>
-                <br />
-            </div >
         </div>;
     }
     public renderMovieTable() {
         return <div>
-            <table className='table1'>
-                <thead>
-                    <th key={this.state.MovieData.movieId}>
-                        <td>{this.state.MovieData.movie_Name}</td>
-                    </th>
-                </thead>
+            <table cellSpacing={4} width="70%" className='tablecontent'>
+                <tbody>
+                    <tr>
+                        <td rowSpan={2}>
+                            <img width="200" height="auto" alt="" src={this.state.path + this.state.MovieData.movie_Image} />
+                        </td>
+                        <th>
+                            <div>
+                                <label><h1>{this.state.MovieData.movie_Name}</h1></label>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div>
+                                <label>{this.state.MovieData.movie_description}</label>
+                            </div>
+                        </th >
+                        <th>
+                            <div>
+                                <label>Корисне посилання</label><br /><br /><br />
+                                <a href={this.state.MovieData.movie_url}>{this.state.MovieData.movie_url}</a>
+                            </div>
+                        </th>
+                    </tr>
+                </tbody>
             </table>
-            <div className='formchange'>
-                <div className="form-group col" >
-                    <input type="hidden" name="MovieId" value={this.state.MovieData.movieId} />
-                </div>
-                < div className="form-group col" >
-                    <label className=" control-label col-md-12" htmlFor="Name">Movie Name</label>
-                    <div className="col-md-4">
-                        <input className="form-control" type="text" name="Movie_Name" defaultValue={this.state.MovieData.movie_Name} required />
-                    </div>
-                </div >
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Gender">Movie Description</label>
-                    <div className="col-md-4">
-                        <textarea className="form-control" type="text" name="Movie_description" defaultValue={this.state.MovieData.movie_description} required />
-                    </div>
-                </div >
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Department" >Movie url</label>
-                    <div className="col-md-4 jj">
-                        <input className="form-control" type="text" name="Movie_url" defaultValue={this.state.MovieData.movie_url} required />
-                    </div>
-                </div>
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Department" >Movie image</label>
-                    <div className="col-md-4 jj">
-                        <img width="200" height="auto" alt="" src={this.state.path + this.state.MovieData.movie_Image} />
-                    </div>
-                </div>
-                <br />
-            </div >
         </div>;
     }
 }

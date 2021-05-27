@@ -32,8 +32,9 @@ export class Books extends React.Component<RouteComponentProps<{}>, FetchBookDat
 
         return <div>
             <div className="linn">
-                <NavLink to="/">На головну</NavLink>
+                <NavLink className='contentButton' to="/">На головну</NavLink>
             </div>
+            <br />
             {contents}
         </div>;
         
