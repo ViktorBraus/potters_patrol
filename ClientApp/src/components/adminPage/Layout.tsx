@@ -1,15 +1,13 @@
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router';
 import { NavMenu } from './NavMenu';
 
-export interface LayoutProps {
-    children?: React.ReactNode;
-}
 
-export class Layout extends React.Component<LayoutProps, {}> {
+export class Layout extends React.Component<RouteComponentProps<{}>,{}> {
     public render() {
-        return <div className='container-fluid'>
-            <div className='col'>
-                <div className='col-sm-3'>
+        return <div>
+            <div>
+                <div >
                     <NavMenu />
                 </div>
             </div>

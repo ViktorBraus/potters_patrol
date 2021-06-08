@@ -50,7 +50,7 @@ export class Books extends React.Component<RouteComponentProps<{}>, FetchBookDat
             </thead>
             <tbody>
                 {bookList.map(b =>
-                    <td><img className='imj' alt="" src={this.state.path + b.book_Image} /></td>
+                    <td><a onClick={(id) => this.handleEdit(b.bookId)} ><img className='imj' alt="" src={this.state.path + b.book_Image} /></a></td>
                 )}</tbody>
         </table>;
     }

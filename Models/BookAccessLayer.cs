@@ -78,12 +78,11 @@ namespace Models
                 throw;
             }
         }
-
-        //To Delete the record of a particular employee  
+  
         public int DeleteBook(int id)
         {
             try
-            {//emp == b
+            {
                 Book b = db.Books.Find(id);
                 db.Books.Remove(b);
                 db.SaveChanges();

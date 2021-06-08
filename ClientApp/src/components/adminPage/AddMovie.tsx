@@ -90,31 +90,31 @@ export class AddMovie extends React.Component<RouteComponentProps<{}>, AddMovieD
     // Returns the HTML Form to the render() method.
     private renderCreateForm() {
         return (
-            <form className='formchange' onSubmit={this.handleSave} >
-                <div className="form-group row" >
+            <form style={{ width: "500px" }} className='formchange form-wrapper' onSubmit={this.handleSave} >
+                <div>
                     <input type="hidden" name="MovieId" value={this.state.MovieData.movieId} />
                 </div>
-                < div className="form-group row" >
-                    <label className=" control-label col-md-12" htmlFor="Name">Movie Name</label>
-                    <div className="col-md-4">
-                        <input className="form-control" type="text" name="Movie_Name" defaultValue={this.state.MovieData.movie_Name} required />
+                <div>
+                    <label htmlFor="Name">Movie Name</label>
+                    <div>
+                        <input style={{ width: "400px" }} className="kk" type="text" name="Movie_Name" defaultValue={this.state.MovieData.movie_Name} required />
                     </div>
                 </div >
-                <div className="form-group row">
-                    <label className="control-label col-md-12" htmlFor="Gender">Movie Description</label>
-                    <div className="col-md-4">
-                        <textarea className="form-control" type="text" name="Movie_description" defaultValue={this.state.MovieData.movie_description} required />
+                <div>
+                    <label  htmlFor="Gender">Movie Description</label>
+                    <div>
+                        <textarea style={{ width: "400px" }} className="kk" type="text" name="Movie_description" defaultValue={this.state.MovieData.movie_description} required />
                     </div>
                 </div >
-                <div className="form-group row">
-                    <label className="control-label col-md-12" htmlFor="Department" >Movie url</label>
-                    <div className="col-md-4">
-                        <input className="form-control" type="text" name="Movie_url" defaultValue={this.state.MovieData.movie_url} required />
+                <div>
+                    <label htmlFor="Department" >Movie url</label>
+                    <div >
+                        <input style={{ width: "400px" }} className="kk" type="text" name="Movie_url" defaultValue={this.state.MovieData.movie_url} required />
                     </div>
                 </div>
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Department" >Book image</label>
-                    <div className="col-md-4 jj">
+                <div >
+                    <label htmlFor="Department" >Book image</label>
+                    <div className="jj">
                         <input
                             hidden
                             className="form-control"
@@ -127,7 +127,7 @@ export class AddMovie extends React.Component<RouteComponentProps<{}>, AddMovieD
                 </div>
                 <br/>
                 <div className="form-group">
-                    <button type="submit" className="btn btn-default buta">Save</button>
+                    <button style={{ margin: "10px 40px 10px 10px" }} type="submit" className="btn btn-default buta">Save</button>
                     <button className="btn buta" onClick={this.handleCancel}>Cancel</button>
                 </div >
             </form >

@@ -50,7 +50,6 @@ export class Content extends React.Component<RouteComponentProps<{}>, ContentBoo
             : this.state.BookData.bookId > 0 ? this.renderBookTable()
                 : this.state.GameData.gameId > 0 ? this.renderGameTable()
                     : this.state.MovieData.movieId > 0 ? this.renderMovieTable() : "";
-        
         return <div>
             <div className="linn">
                 {this.state.BookData.bookId > 0 ? < NavLink className='contentButton' to="/Books">На головну</NavLink> :

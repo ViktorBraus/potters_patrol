@@ -18,12 +18,29 @@ namespace potters_patrol.Controllers
             return objtest.GetAllQuestions();
         }
         [HttpGet]
+        [Route("api/Tests/TestIndex")]
+        public IEnumerable<Test> TestIndex()
+        {
+            return objtest.GetAllTests();
+        }
+        [HttpGet]
+        [Route("api/Test/Details/{id}")]
+        public Test TestDetails(int id)
+        {
+            return objtest.GetTest(id);
+        }
+        [HttpGet]
         [Route("api/Answer/AnswerIndex")]
         public IEnumerable<Answers> AnswerIndex()
         {
             return objtest.GetAllAnswers();
         }
-
+        [HttpGet]
+        [Route("api/Result/Index")]
+        public IEnumerable<TestResult> ResultIndex()
+        {
+            return objtest.GetAllResults();
+        }
 
     }
 }

@@ -66,7 +66,8 @@ var Games = /** @class */ (function (_super) {
             })),
             React.createElement("tbody", null, gameList.map(function (b) {
                 return React.createElement("td", null,
-                    React.createElement("img", { className: 'imj', alt: "", src: _this.state.path + b.game_Image }));
+                    React.createElement("a", { onClick: function (id) { return _this.handleEdit(b.gameId); } },
+                        React.createElement("img", { className: 'imj', alt: "", src: _this.state.path + b.game_Image })));
             })));
     };
     return Games;

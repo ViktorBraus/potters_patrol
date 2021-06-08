@@ -10,6 +10,29 @@ namespace potters_patrol.Models
     public class TestAccessLayer
     {
         myTestDBContext db = new myTestDBContext();
+        public IEnumerable<Test> GetAllTests()
+        {
+            try
+            {
+                return db.Test.ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public Test GetTest(int id)
+        {
+            try
+            {
+                Test test = db.Test.Find(id);
+                return test;
+            }
+            catch
+            {
+                throw;
+            }
+        }
         public IEnumerable<QuestionDetail> GetAllQuestions()
         {
             try
@@ -33,7 +56,18 @@ namespace potters_patrol.Models
                 throw;
             }
         }
+        public IEnumerable<TestResult> GetAllResults()
+        {
 
+            try
+            {
+                return db.TestResult.ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
         //Get the details of a particular question  
         public QuestionDetail GetQuestionData(int id)
         {

@@ -6,25 +6,31 @@ export class NavMenu extends React.Component<{}, {}> {
         return <div className='vv'>
             <ul className='ul'>
                 <li>
-                    <a><NavLink className='lol' to={'/'} exact activeClassName='active'>
-                                Home
+                    <a><NavLink className='lol1' to={'/'} exact activeClassName='active'>
+                        Головна    
+                        </NavLink>
+                    </a>
+                </li>
+                <li>
+                    <NavLink className='lol1' to={'/fetchbook'} activeClassName='active'>
+                        Книги
+                        </NavLink>
+                </li>
+                <li>
+                    <NavLink className='lol1' to={'/fetchgame'} activeClassName='active'>
+                        Ігри
+                        </NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/fetchmovie'} activeClassName='active'>
+                        Фільми  
+                        </NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/fetchForum'} activeClassName='active'>
+                        Форум
                             </NavLink>
-                     </a>   </li>
-                        <li>
-                    <NavLink className='lol' to={'/fetchemployee'} activeClassName='active'>
-                                Books
-                            </NavLink>
-                        </li>
-                        <li>
-                    <NavLink className='lol' to={'/fetchgame'} activeClassName='active'>
-                               Games
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/fetchmovie'} activeClassName='active'>
-                                Movies
-                            </NavLink>
-                        </li>
+                </li>
                     </ul>
         </div>;
     }

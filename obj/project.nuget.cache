@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WKKwiPbO9e0ZEFGiKQmZ4qoqkqlgfk5TBvTpB3hldOjaMK4deq0cSo3v9kZQ8P92tByIrZ5VJlsod6jceyskUQ==",
+  "dgSpecHash": "m2VDKMIMuiQeyb1ROXOb+Pb2w2bBk8LnXdf/nL3uLoicAH7Ej7BxDlradGZaMpGLgEI5ntrdqje1xPgptKTOdA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MSI\\Desktop\\PottersPatrol\\my-new-app.csproj",
+  "projectFilePath": "C:\\Users\\MSI\\Desktop\\PottersPatrol\\Potters_Patrol.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.aspnetcore.spaservices.extensions\\5.0.4\\microsoft.aspnetcore.spaservices.extensions.5.0.4.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

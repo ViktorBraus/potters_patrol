@@ -3,15 +3,18 @@
     src: url("../../fonts/Lora-Regular.ttf") format("truetype"); 
     font-style: normal; 
     font-weight: normal; 
-    } 
-.Passed
-{
+    }
+.account, wrapper1, .form-wrapper1, .email, .userinfo {
+    width: max-content;
+    height:max-content;
+}
+.Passed {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height:37px;
+    height: 37px;
     width: 6em;
-    font-family: "LoraRegular";  
+    font-family: "LoraRegular";
     font-size: 48px;
     color: #AB9C9C;
 }

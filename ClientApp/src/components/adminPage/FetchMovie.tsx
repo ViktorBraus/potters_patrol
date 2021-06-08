@@ -30,7 +30,7 @@ export class FetchMovie extends React.Component<RouteComponentProps<{}>, FetchMo
             : this.renderMovieTable(this.state.movieList);
 
         return <div>
-            <h1>Дані по Іграм</h1>
+            <h1>Дані по Фільмам</h1>
             <div className="linn">
                 <NavLink to="/addMovie">Створити новий фільм</NavLink>
                 <NavLink to="/Layout">Повернутись до Адмін панелі</NavLink>

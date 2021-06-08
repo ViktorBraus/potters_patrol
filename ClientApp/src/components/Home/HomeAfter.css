@@ -36,41 +36,66 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
   flex-wrap: wrap;
 }
 .imga {
-    width: 600px;
-    height: 600px;
-    object-fit: scale-down;
-    border-radius: 100%;
-    background-color: rgba(128, 128, 128, 0.562);
+    height: 100%;
+    width: 75%;
+    margin: 0 auto;
     background-image: url('../../images/wand1.png');
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: local;
+    vertical-align: central;
+    align-content: center;
+    justify-content: center;
+}
+.imga_ {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../images/wand1.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .imga1 {
-    width: 600px;
-    height: 600px;
-    object-fit: scale-down;
-    border-radius: 100%;
-    background-color: rgba(128, 128, 128, 0.562);
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
     background-image: url('../../images/patronus.png');
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment:local;
 }
-.imga2 {
+.imga1_ {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/patronus.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.circle {
     width: 600px;
     height: 600px;
-    object-fit: scale-down;
     border-radius: 100%;
     background-color: rgba(128, 128, 128, 0.562);
+}
+.imga2 {
+    width: 100%;
+    height: 100%;
     background-image: url('../../images/шляпа.png');
-    background-repeat:no-repeat;
+    background-size: contain;
     background-position: center;
-    background-attachment:local;
+    background-repeat: no-repeat;
+}
+.imga2_ {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/шляпа.png');
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .title
 {
@@ -83,8 +108,10 @@
 }
 .ull
 {
+  text-align: center;
   align-items: center;
   display: inline-flex;
+  flex-direction:column;
   justify-content: space-bettween;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -107,7 +134,10 @@
   height: 100%;
   padding-bottom: 20px;
   background: url(../../images/testsection.jpg);
-  opacity: 0.8;
   background-position: center;
   background-size: cover;
+}
+.block {
+    border-radius:20px;
+    background: #3B2024;
 }

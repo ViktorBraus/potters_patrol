@@ -68,7 +68,8 @@ var Movies = /** @class */ (function (_super) {
             })),
             React.createElement("tbody", null, movieList.map(function (b) {
                 return React.createElement("td", null,
-                    React.createElement("img", { className: 'imj', alt: "", src: _this.state.path + b.movie_Image }));
+                    React.createElement("a", { className: "action", onClick: function (id) { return _this.handleEdit(b.movieId); } },
+                        React.createElement("img", { className: 'imj', alt: "", src: _this.state.path + b.movie_Image })));
             })));
     };
     return Movies;

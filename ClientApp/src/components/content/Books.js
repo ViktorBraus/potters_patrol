@@ -57,7 +57,8 @@ var Books = /** @class */ (function (_super) {
             })),
             React.createElement("tbody", null, bookList.map(function (b) {
                 return React.createElement("td", null,
-                    React.createElement("img", { className: 'imj', alt: "", src: _this.state.path + b.book_Image }));
+                    React.createElement("a", { onClick: function (id) { return _this.handleEdit(b.bookId); } },
+                        React.createElement("img", { className: 'imj', alt: "", src: _this.state.path + b.book_Image })));
             })));
     };
     return Books;

@@ -5,7 +5,14 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "module": "commonjs",
+    "jsx": "react",
+    "strict": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "composite": true,
+    "baseUrl": "./packages",
     "lib": [
       "dom",
       "dom.iterable",
@@ -24,5 +31,8 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "exclude": [
+    "node_modules/auth0-js"
+]
 }

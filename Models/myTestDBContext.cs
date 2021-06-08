@@ -11,6 +11,12 @@ namespace Models
         public virtual DbSet<Game> Games { get; set; }
         public virtual DbSet<QuestionDetail> QuestionDetail { get; set; }
         public virtual DbSet<Answers> Answers { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserContent> UserContent{ get; set; }
+        public virtual DbSet<TestResult> TestResult { get; set; }
+        public virtual DbSet<Forum> Forum { get; set; }
+        public virtual DbSet<ForumMessages> ForumMessages { get; set; }
+        public virtual DbSet<Test> Test{ get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -23,6 +29,8 @@ namespace Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Answers>()
+                .HasNoKey();
+            modelBuilder.Entity<TestResult>()
                 .HasNoKey();
         }
     }

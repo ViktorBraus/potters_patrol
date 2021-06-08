@@ -90,31 +90,31 @@ export class AddGame extends React.Component<RouteComponentProps<{}>, AddGameDat
     // Returns the HTML Form to the render() method.
     private renderCreateForm() {
         return (
-            <form className='formchange' onSubmit={this.handleSave} >
-                <div className="form-group col" >
+            <form style={{ width: "500px" }} className='formchange form-wrapper' onSubmit={this.handleSave} >
+                <div>
                     <input type="hidden" name="GameId" value={this.state.GameData.gameId} />
                 </div>
-                < div className="form-group col" >
-                    <label className=" control-label col-md-12 fl" htmlFor="Name">Game Name</label>
+                < div >
+                    <label className="fl" htmlFor="Name">Game Name</label>
                     <div>
-                        <input className="nn" type="text" name="Game_Name" defaultValue={this.state.GameData.game_Name} required />
+                        <input style={{ width: "400px" }} className="kk" type="text" name="Game_Name" defaultValue={this.state.GameData.game_Name} required />
                     </div>
                 </div >
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Gender">Game Description</label>
+                <div >
+                    <label htmlFor="Gender">Game Description</label>
                     <div>
-                        <textarea className="form-control" type="text" name="Game_description" defaultValue={this.state.GameData.game_description} required />
+                        <textarea style={{ width: "400px" }} className="kk" type="text" name="Game_description" defaultValue={this.state.GameData.game_description} required />
                     </div>
                 </div >
-                <div className="form-group row">
-                    <label className="control-label col-md-12 fl" htmlFor="Department" >Game url</label>
+                <div>
+                    <label htmlFor="Department" >Game url</label>
                     <div>
-                        <input className="form-control" type="text" name="Game_url" defaultValue={this.state.GameData.game_url} required />
+                        <input style={{ width: "400px" }} className="kk" type="text" name="Game_url" defaultValue={this.state.GameData.game_url} required />
                     </div>
                 </div>
-                <div className="form-group col">
-                    <label className="control-label col-md-12" htmlFor="Department" >Book image</label>
-                    <div className="col-md-4 jj">
+                <div >
+                    <label htmlFor="Department" >Book image</label>
+                    <div className="jj">
                         <input
                             hidden
                             className="form-control"
@@ -126,8 +126,8 @@ export class AddGame extends React.Component<RouteComponentProps<{}>, AddGameDat
                     </div>
                 </div>
                <br/>
-                <div className="form-group col">
-                    <button type="submit" className="btn btn-default buta">Save</button>
+                <div className="form-group">
+                    <button style={{margin:"10px 40px 10px 10px"}} type="submit" className="btn btn-default buta">Save</button>
                     <button className="btn buta" onClick={this.handleCancel}>Cancel</button>
                 </div >
             </form >

@@ -53,7 +53,7 @@ export class Games extends React.Component<RouteComponentProps<{}>, FetchGameDat
             </thead>
             <tbody>
                 {gameList.map(b =>
-                    <td><img className='imj' alt="" src={this.state.path + b.game_Image} /></td>
+                    <td><a onClick={(id) => this.handleEdit(b.gameId)} ><img className='imj' alt="" src={this.state.path + b.game_Image} /></a></td>
                 )}</tbody>
         </table>;
     }

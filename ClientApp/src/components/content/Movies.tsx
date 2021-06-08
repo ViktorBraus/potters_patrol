@@ -57,7 +57,7 @@ export class Movies extends React.Component<RouteComponentProps<{}>, FetchMovieD
             </thead>
             <tbody>
                 {movieList.map(b =>
-                    <td><img className='imj' alt="" src={this.state.path + b.movie_Image} /></td>
+                    <td><a className="action" onClick={(id) => this.handleEdit(b.movieId)} ><img className='imj' alt="" src={this.state.path + b.movie_Image} /></a></td>
                 )}</tbody>
         </table>;
     }

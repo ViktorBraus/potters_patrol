@@ -5907,9 +5907,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MSI\\Desktop\\PottersPatrol\\my-new-app.csproj",
+      "projectUniqueName": "C:\\Users\\MSI\\Desktop\\PottersPatrol\\Potters_Patrol.csproj",
       "projectName": "Potters_Patrol",
-      "projectPath": "C:\\Users\\MSI\\Desktop\\PottersPatrol\\my-new-app.csproj",
+      "projectPath": "C:\\Users\\MSI\\Desktop\\PottersPatrol\\Potters_Patrol.csproj",
       "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\MSI\\Desktop\\PottersPatrol\\obj\\",
       "projectStyle": "PackageReference",
