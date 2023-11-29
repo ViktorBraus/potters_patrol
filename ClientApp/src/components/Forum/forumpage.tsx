@@ -92,7 +92,7 @@ export class ForumBlock extends React.Component<RouteComponentProps<{}>, Content
                             <tbody className='forumbody'>
                                 {forum.map(b =>
                                     <>
-                                        <tr>
+                                        <tr className="forum_list">
                                             <td className='details'>
                                                 <label style={{ color: "rgb(114, 100, 100)"}}>Назва обговорення</label>
                                                 <br />
@@ -101,12 +101,11 @@ export class ForumBlock extends React.Component<RouteComponentProps<{}>, Content
                                                     {b.title}
                                                 </a>
                                            </td>
-                                            <td className='bordering'>
-                                                <tr className='second'>
+                                            <td className='details'>
                                                     <label style={{ color: "rgb(114, 100, 100)" }}>Кількість повідомлень</label>
                                                     <br />
                                                     <label style={{ color: "rgb(114, 100, 100)" }}>{this.counting(b.id, this.state.forumMessages)}</label>
-                                                </tr>
+                                                
                                             </td>
                                             <td className='details'>
                                                 <tr>
@@ -114,7 +113,7 @@ export class ForumBlock extends React.Component<RouteComponentProps<{}>, Content
                                                 </tr>
                                                 <tr>
                                                     <label style={{ color: "rgb(114, 100, 100)" }}>Дата створення: </label>
-                                                    <label style={{ color: "rgb(114, 100, 100)" }}>{b.dateOfCreation.toString()}</label>
+                                                    <label style={{ color: "rgb(114, 100, 100)" }}>{b.dateOfCreation.toString().slice(0,10)}</label>
                                                 </tr>
                                             </td>
                                         </tr>
@@ -124,15 +123,14 @@ export class ForumBlock extends React.Component<RouteComponentProps<{}>, Content
                         </td>
                     <td>
             <table className='static'>
-                <th className='fg'>Статистика на форумі</th>
+                <th >Статистика на форумі</th>
                     <tr>
                         <tr >Загальна кількість тем </tr>
                         <tr ><b>{this.Statistics_counting(1, this.state.forum, this.state.forumMessages, this.state.user)}</b></tr>
                         <tr >Загальна кількість повідомлень </tr>
                         <tr ><b>{this.Statistics_counting(2, this.state.forum, this.state.forumMessages, this.state.user)}</b></tr>
-                        <tr >Загальна кількість учасників </tr>
-                        <tr ><b>{this.Statistics_counting(3, this.state.forum, this.state.forumMessages, this.state.user)}</b></tr>
-                </tr>
+                                {console.log(" <tr >Загальна кількість учасників </tr> <tr ><b>{this.Statistics_counting(3, this.state.forum, this.state.forumMessages, this.state.user)}</b></tr></tr>")}
+                            </tr>
                         </table>
                         </td>
                     </tr>

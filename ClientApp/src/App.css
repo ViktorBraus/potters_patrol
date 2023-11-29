@@ -11,7 +11,22 @@
     font-style: normal;
     font-weight: normal;
 }
-
+.send {
+    background: rgb(59, 32, 36, 0.8);
+}
+.chat
+{
+    font-size: 55px;
+}
+.back_message {
+    margin-left: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-image: url(./images/back.jpg);
+    background-size: cover;
+    width: 99%;
+}
 .textstyling {
     color: #ab9c9cd2;
     font-size: 60px;
@@ -61,12 +76,52 @@ a {
     width: 65px;
     height: 65px;
     border-radius: 76.5px;
+    margin-top: 10px;
     border: none;
     background: url(./images/герб.png);
     background-position: center;
     background-size: cover;
 }
-
+.faculty_slyz {
+    width: 65px;
+    height: 65px;
+    border-radius: 76.5px;
+    margin-top: 10px;
+    border: none;
+    background: url(./images/Слизерин.png);
+    background-position: center;
+    background-size: cover;
+}
+.faculty_huff {
+    width: 65px;
+    height: 65px;
+    border-radius: 76.5px;
+    margin-top: 10px;
+    border: none;
+    background: url(./images/Пуффендуй.png);
+    background-position: center;
+    background-size: cover;
+}
+.faculty_gryf {
+    width: 65px;
+    height: 65px;
+    border-radius: 76.5px;
+    margin-top: 10px;
+    border: none;
+    background: url(./images/Гриффиндор.png);
+    background-position: center;
+    background-size: cover;
+}
+.faculty_rav {
+    width: 65px;
+    height: 65px;
+    border-radius: 76.5px;
+    margin-top: 10px;
+    border: none;
+    background: url(./images/Когтевран.png);
+    background-position: center;
+    background-size: cover;
+}
 .menucursor {
     padding: 6px 9px;
     flex-grow: 1;
@@ -83,7 +138,6 @@ a {
     position: sticky;
     font-family: "LoraRegular";
     width: 100%;
-    top: 0;
     background: #3B2024;
     font-family: Lora;
     font-size: 55px;
@@ -201,8 +255,16 @@ button:hover, NavLink:hover,  {
     background-position: center;
     background-size: contain;
 }
-
-.AboutButton {
+.Chat_button {
+    width: 50px;
+    height: 50px;
+    border-radius: 76.5px;
+    border: none;
+    background: url(./images/couldron.png);
+    background-position: center;
+    background-size: contain;
+}
+    .AboutButton {
     width: 50px;
     height: 50px;
     border-radius: 76.5px;
@@ -320,7 +382,7 @@ button:hover {
 /*REGISTRY STYLING*/
 
 .registrybackground {
-    background: url(./images/RegistryBackground.png);
+    background: url(./images/chat_back.png);
     background-position: center;
     background-size: contain;
 }
@@ -412,7 +474,7 @@ input, textarea {
 }
 
 .login {
-    background: url(./images/RegistryBackground.png);
+    background: url(./images/chat_back.png);
     background-position: center;
     background-size: contain;
 }
@@ -594,7 +656,7 @@ input, textarea {
     background-position: center;
     background-size: cover;
 }
-.Gryf {
+.Ґрифіндор {
     width: 300px;
     height: 300px;
     background: url(./images/Гриффиндор.png);
@@ -602,7 +664,7 @@ input, textarea {
     background-size: contain;
     background-repeat: no-repeat;
 }
-.Sliz {
+.Слизерин {
     width: 300px;
     height: 300px;
     background: url(./images/Слизерин.png);
@@ -610,7 +672,7 @@ input, textarea {
     background-size: contain;
     background-repeat: no-repeat;
 }
-.Patr {
+.Фенікс {
     width: 300px;
     height: 300px;
     background: url(./images/феникс.jpg);
@@ -618,7 +680,7 @@ input, textarea {
     background-size: contain;
     background-repeat: no-repeat;
 }
-.Huff {
+.Гафелпаф {
     width: 300px;
     height: 300px;
     background: url(./images/Пуффендуй.png);
@@ -626,7 +688,7 @@ input, textarea {
     background-size: contain;
     background-repeat: no-repeat;
 }
-.Rav {
+.Рейвенкло {
     width: 300px;
     height: 300px;
     background: url(./images/Когтевран.png);
@@ -651,8 +713,15 @@ input, textarea {
     background-size: contain;
     background-repeat: no-repeat;
 }
+.que {
+    color: black !important;
+    background: url(./images/que.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 .Wand {
-    color: black;
+    color: white;
     background: url(./images/wand.jpg);
     background-position: center;
     background-size: contain;
@@ -696,8 +765,9 @@ input, textarea {
 
 .buta {
     width: max-content !important;
+    margin-right: 2px;
     margin-left: 1px;
-    background: rgba(227, 227, 227, 0.2);
+    background: rgb(59, 32, 36, 0.8);
     border-radius: 10px;
     color: #AB9C9C;
     font-size: 30px;
@@ -723,29 +793,40 @@ hr {
     text-align: center;
 }
 
+
+
 .table1 {
-    width: auto;
     margin-left: auto;
     margin-right: auto;
     table-layout: fixed;
 }
 
     .table1 th {
-        width: inherit;
         text-align: center;
         border: 1px solid rgb(182, 168, 168);
     }
 
 .imj {
-    width: 200px;
+    height: 250px;
 }
-
+.imj_
+{
+    height: 200px;
+}
+.movie_height {
+    height: 150px !important;
+    width: 300px !important;
+}
+.contentButton:hover {
+    background-color: #2b2727;
+    color: rgb(219, 219, 219);
+    border-radius: 10px;
+}
 .table1 td {
-    vertical-align: central;
-    align-items: center;
-    align-self: center;
-    text-align: center;
-    width: 180px;
+    vertical-align: central !important;
+    align-items: center !important;
+    align-self: center !important;
+    text-align: center !important;
 }
 
 .table
@@ -764,7 +845,7 @@ hr {
 }
 
 .table th {
-    text-align: center;
+    text-align: center !important;
 }
 
 .tablecontent {
@@ -822,12 +903,6 @@ h3 {
     border-radius: 10px;
 }
 
-    .contentButton:hover {
-        width: auto;
-        background-color: #2b2727;
-        color: rgb(219, 219, 219);
-        border-radius: 10px;
-    }
 .form {
     margin: 0 auto;
     width: max-content;

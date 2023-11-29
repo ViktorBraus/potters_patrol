@@ -42,7 +42,6 @@ export class Result extends React.Component<RouteComponentProps<{}>, ResultList>
                 ))}
             <div className='zol'>
                 <button className='buta'><NavLink to='/'>Повернутись</NavLink></button>
-                <button id='12' className='buta' type="submit">Завершити</button>
             </div>
         </form>;
     }

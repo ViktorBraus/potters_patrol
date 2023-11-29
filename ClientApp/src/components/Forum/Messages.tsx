@@ -6,6 +6,7 @@ import { Forum } from './forumpage';
 import { ForumMessagges } from './forumpage'
 var date = new Date().toLocaleDateString();
 var time = new Date().toLocaleTimeString();
+var date_ = "";
 interface AddBookDataState {
     title: string;
     loading: boolean;
@@ -57,10 +58,8 @@ export class Messages extends React.Component<RouteComponentProps<{}>, AddBookDa
             ? <p><em>Loading...</em></p>
             : this.renderCreateForm();
 
-        return <div>
-            <h1>{this.state.title}</h1>
-            <NavLink to="/forum">Повернутись до Форуму</NavLink>
-            <hr />
+        return <div className="back_message">
+            <h1 className="chat">{this.state.title}</h1>
             {contents}
         </div>;
     }
@@ -106,32 +105,20 @@ export class Messages extends React.Component<RouteComponentProps<{}>, AddBookDa
     // Returns the HTML Form to the render() method.
     private renderCreateForm() {
         return (
-            <div >
-                <div className=''>
-                    <div className="form-group col" >
-                    <input type="hidden" name="forum_Id" value={this.state.forum.id} />
-                    </div>
-                    < div className="form-group col" >
-                    <label className=" control-label col-md-12" htmlFor="Name">Назва обговорення: <b>{this.state.forum.title}</b></label>
-                    </div >
-                    <div className="form-group col">
-                    <label className=" control-label col-md-12" htmlFor="Name">Автор: <b>{this.state.forum.creator}</b></label>
-                    </div >
-                    <div className="form-group col">
-                        <label className=" control-label col-md-12" htmlFor="Name">Дата створення: <b>{this.state.forum.dateOfCreation.toString()}</b></label>
-                    </div>
-                </div>
+            <div>
                 <br />
                 <table className='messageff'>
                     <tr>
                         <td>
                 <div className='chatting'>
-                    {this.state.mesmassive.map(m =>
-                        m.forum_Id == this.state.forum.id ?
+                                {
+                                    this.state.mesmassive.map(m =>
+                                        m.forum_Id == this.state.forum.id ?
                             <div >
-                                <label className='coloring1'>{m.messageSender}</label>
-                                <br />
-                                <label className='coloring2'>{m.message} <br /><h5>{m.dateOfSend != null ? m.dateOfSend : ""} - {m.timeOfSend != null ? m.timeOfSend : ""}</h5></label>
+                                                <label className='coloring2'>{m.messageSender}
+                                                    <br />
+                                    <label className='coloring1'>{m.message} <h5>{m.timeOfSend != null ? m.timeOfSend : ""}</h5></label>
+                                </label>
                             </div>
                             : null)}
                             </div>
@@ -140,7 +127,23 @@ export class Messages extends React.Component<RouteComponentProps<{}>, AddBookDa
                     <tr>
                         <td>
                 <form onSubmit={this.handleSave}>
-                    <tr>
+                    
+                                <div className=''>
+                                    <div className="form-group col" >
+                                        <input type="hidden" name="forum_Id" value={this.state.forum.id} />
+                                    </div>
+                                    < div className="form-group col" >
+                                        <label className=" control-label col-md-12" htmlFor="Name">Назва обговорення: <b>{this.state.forum.title}</b></label>
+                                    </div >
+                                    <div className="form-group col">
+                                        <label className=" control-label col-md-12" htmlFor="Name">Автор: <b>{this.state.forum.creator}</b></label>
+                                    </div >
+                                    <div className="form-group col">
+                                        <label className=" control-label col-md-12" htmlFor="Name">Дата створення: <b>{date_ = this.state.forum.dateOfCreation.toString().slice(0,10)}</b></label>
+                                    </div>
+                                </div>
+                                <div className="bottom">
+                                <tr>
                                     <input name='forum_Id' type="hidden" value={this.state.forum.id} />
                                     <input name='forum_Title' type="hidden" value={this.state.forum.title} />
                                     <input name='dateOfSend' type="hidden" value={date} />
@@ -148,11 +151,12 @@ export class Messages extends React.Component<RouteComponentProps<{}>, AddBookDa
                                     <UserName />
                                     <input className='send' name='message' type="text" placeholder="Напишіть повідомлення" defaultValue={this.state.messages.message} />
                                 </tr>
-                    <br/>
-                <div className="form-group col">
-                        <button onClick={this.redirect} type="submit" className="btn btn-default buta">Відправити</button>
-                    <button className="btn buta" onClick={this.handleCancel}>Повернутись</button>
-                    </div >
+                                <br />
+                                <div className="form-group col">
+                                    <button onClick={this.redirect} type="submit" className="btn btn-default buta">Відправити</button>
+                                    <button className="btn buta" onClick={this.handleCancel}>Повернутись</button>
+                                    </div >
+                                </div>
                             </form>
                             </td>
                         </tr>

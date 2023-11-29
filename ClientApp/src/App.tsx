@@ -84,8 +84,11 @@ const App = () => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <meta charSet="utf-8" />
-      </head>
-      <NavBar/>
+          </head>
+          <div className="navigaionbar">
+              <NavBar />
+          </div>
+
       <main>
         {content()}
       </main>

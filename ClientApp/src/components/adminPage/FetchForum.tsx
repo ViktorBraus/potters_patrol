@@ -32,6 +32,7 @@ export class FetchForum extends React.Component<RouteComponentProps<{}>, FetchFo
         return <div>
             <h1>Дані по форуму</h1>
             <div className="linn">
+                <NavLink to="/createDiscussion">Створити нове обговорення</NavLink>
                 <NavLink to="/Layout">Повернутись до Адмін панелі</NavLink>
             </div>
             {contents}

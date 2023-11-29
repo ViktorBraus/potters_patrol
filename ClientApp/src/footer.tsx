@@ -1,11 +1,11 @@
 import React from 'react'
-import { Modal } from 'react-bootstrap';
 const footer = () =>
 {
     return(
         <footer>
             <div className="xz mt-3 mb-5">
                 <div className="col-md-8 col-sm-6" style={{ color: "#AB9C9C " }}>
+                    <br />
                     <h3 style={{ textTransform: "uppercase" }}>Про нас</h3>
                     <p>
                         На <span style={{ fontWeight: 700, fontSize: 18 }}> Potter`s Patrol  </span> ви маєте можливість поринути у світ Гаррі Поттера,
@@ -17,7 +17,8 @@ const footer = () =>
           </p>
 
                 </div>
-                <div className="col-md-4 col-sm-5" style={{ color: "#AB9C9C ", padding:0 }}>
+                <div className="col-md-4 col-sm-5" style={{ color: "#AB9C9C ", padding: 0 }}>
+                    <br />
                     <h3 style={{ textTransform: "uppercase" }}>Підтримуй зв’язок</h3>
                     <ul className="list-unstyled">
                         <li>
@@ -37,8 +38,8 @@ const footer = () =>
                         </li>
                         <li className="social">
                             <a className='btn btn-social-icon btn-lg btn-instagram' href="https://www.instagram.com/viktor__braus/" target="_blank"><i className="fa fa-instagram"></i></a>
-                            <a className='btn btn-social-icon btn-lg btn-twitter' href=""><i className="fa fa-twitter" target="_blank"></i></a>
-                            <a className='btn btn-social-icon btn-lg btn-google' href=""><i className="fa fa-google" target="_blank"></i></a>
+                            <a className='btn btn-social-icon btn-lg btn-twitter' href="https://twitter.com/ViktorBraus"><i className="fa fa-twitter" target="_blank"></i></a>
+                            <a className='btn btn-social-icon btn-lg btn-telegram' href="https://t.me/viktorbraus"><i className="fa fa-telegram" target="_blank"></i></a>
                             <a className='btn btn-social-icon btn-lg btn-facebook' href="https://www.facebook.com/Derekandkoral"><i className="fa fa-facebook" target="_blank"></i></a>
                         </li>
                     </ul>

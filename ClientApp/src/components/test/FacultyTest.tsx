@@ -1,4 +1,4 @@
-import * as React from 'react';
+Ôªøimport * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { Link, NavLink, Route } from 'react-router-dom';
 import '../../App.css'
@@ -22,13 +22,13 @@ interface FetchTestDataState {
     loading: boolean;
     path: string;
 }
-var u;
+var nickname;
 const UserName = () => {
     const { user } = useAuth0();
-    u = user?.nickname;
+    nickname = user?.nickname;
     return (<>
         <input hidden name="Id" value="1" />
-        <input hidden className="form-control kk" type="text" name="UserName" defaultValue={u} required />
+        <input hidden className="form-control kk" type="text" name="UserName" defaultValue={nickname} required />
         </>
     )
 }
@@ -36,12 +36,12 @@ export class FacultyTest extends React.Component<RouteComponentProps<{}>, FetchT
     constructor() {
         super();
         this.state = {
-            check: false,
             gryfindor: 0,
             slytherin: 0,
             ravenclaw: 0,
-            result: "",
             hufflepuff: 0,
+            check: false,
+            result: "",
             resulting: [],
             Test: [],
             UserContent: new UserContent,
@@ -85,6 +85,11 @@ export class FacultyTest extends React.Component<RouteComponentProps<{}>, FetchT
             .then(response => response.json() as Promise<UserContent[]>)
             .then(data => {
                 this.setState({ User_Content: data, loading: false });
+            });
+        fetch('api/Tests/Index')
+            .then(response => response.json() as Promise<Tests[]>)
+            .then(data => {
+                this.setState({ Test: data, loading: false });
             });
         fetch('api/Answer/AnswerIndex')
             .then(response => response.json() as Promise<AnswerDetail[]>)
@@ -226,7 +231,7 @@ export class FacultyTest extends React.Component<RouteComponentProps<{}>, FetchT
                 hufflepuff: this.state.hufflepuff + 0.2,
                 ravenclaw: this.state.ravenclaw + 0.8
             });
-        }//ÒÚÂÎÂˆ
+        }//—Å—Ç—Ä–µ–ª–µ—Ü
         if (event.target.id == 17) {
             this.setState({
                 gryfindor: this.state.gryfindor + 0.8,
@@ -258,7 +263,7 @@ export class FacultyTest extends React.Component<RouteComponentProps<{}>, FetchT
                 hufflepuff: this.state.hufflepuff + 1,
                 ravenclaw: this.state.ravenclaw + 0.8
             });
-        }//4 ‚ÓÔÓÒ
+        }//4 –≤–æ–ø—Ä–æ—Å
         if (event.target.id == 21) {
             this.setState({
                 gryfindor: this.state.gryfindor + 1,
@@ -472,29 +477,36 @@ export class FacultyTest extends React.Component<RouteComponentProps<{}>, FetchT
         if (this.state.gryfindor > this.state.slytherin &&
             this.state.gryfindor > this.state.hufflepuff &&
             this.state.gryfindor > this.state.ravenclaw)
-            this.setState({ result: "•ËÙ≥Ì‰Ó" });
+        {
+            this.setState({
+                result: "“ê—Ä–∏—Ñ—ñ–Ω–¥–æ—Ä"
+            });
+        }
         else if (this.state.slytherin > this.state.gryfindor &&
             this.state.slytherin > this.state.hufflepuff &&
-            this.state.slytherin > this.state.ravenclaw) {
+            this.state.slytherin > this.state.ravenclaw)
+        {
             this.setState({
-                result: "—Î≥ÁÂ≥Ì"
+                result: "–°–ª–∏–∑–µ—Ä–∏–Ω"
             });
         }
         else if (this.state.hufflepuff > this.state.slytherin &&
             this.state.hufflepuff > this.state.gryfindor &&
-            this.state.hufflepuff > this.state.ravenclaw) {
+            this.state.hufflepuff > this.state.ravenclaw)
+        {
             this.setState({
-                result: "’‡ÙÂÎÔ‡Ù"
+                result: "–ì–∞—Ñ–µ–ª–ø–∞–≤"
             });
         }
         else if (this.state.ravenclaw > this.state.slytherin &&
             this.state.ravenclaw > this.state.gryfindor &&
-            this.state.ravenclaw > this.state.hufflepuff) {
+            this.state.ravenclaw > this.state.hufflepuff)
+        {
             this.setState({
-                result: "–ÂÈ‚ÂÌÍÎÓ"
+                result: "–†–µ–π–≤–µ–Ω–∫–ª–æ"
             });
         }
-        console.log(this.state.result)
+
     }
     public handleSave(event) {
         event.preventDefault();
@@ -502,36 +514,43 @@ export class FacultyTest extends React.Component<RouteComponentProps<{}>, FetchT
         if (this.state.gryfindor > this.state.slytherin &&
             this.state.gryfindor > this.state.hufflepuff &&
             this.state.gryfindor > this.state.ravenclaw)
-            this.setState({result : "•ËÙ≥Ì‰Ó"});
+            this.setState({result : "“ê—Ä–∏—Ñ—ñ–Ω–¥–æ—Ä"});
         else if (this.state.slytherin > this.state.gryfindor &&
             this.state.slytherin > this.state.hufflepuff &&
             this.state.slytherin > this.state.ravenclaw) {
             this.setState({
-                result: "—Î≥ÁÂ≥Ì"
+                result: "–°–ª–∏–∑–µ—Ä–∏–Ω"
             });
         }
         else if (this.state.hufflepuff > this.state.slytherin &&
             this.state.hufflepuff > this.state.gryfindor &&
             this.state.hufflepuff > this.state.ravenclaw) {
             this.setState({
-                result: "’‡ÙÂÎÔ‡Ù"
+                result: "–ì–∞—Ñ–µ–ª–ø–∞–≤"
             });
         }
         else if (this.state.ravenclaw > this.state.slytherin &&
             this.state.ravenclaw > this.state.gryfindor &&
             this.state.ravenclaw > this.state.hufflepuff) {
             this.setState({
-                result: "–ÂÈ‚ÂÌÍÎÓ"
+                result: "–†–µ–π–≤–µ–Ω–∫–ª–æ"
             });
         }
-        if (this.state.UserContent.userId) {
-                fetch('/api/UserContent/Edit', {
-                    method: 'PUT',
-                    body: data,
-                }).then((response) => response.json())
-                    .then((responseJson) => {
-                        this.props.history.push("/result");
-                    })
+        var uu = this.state.User_Content.find(u => u.userName === nickname);
+        if (uu?.userName === nickname) {
+            fetch('/api/UserContent/Edit', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            }).then((response) => response.json())
+                .then((responseJson) => {
+                    this.props.history.push("/result");
+                })
+                .catch(error => {
+                    console.log("Error updating data: ", error)
+                });
         }
             // POST request for Add employee.
             else {
@@ -551,11 +570,17 @@ export class FacultyTest extends React.Component<RouteComponentProps<{}>, FetchT
     }
     public render() {
         let contents = this.state.loading
-            ? <p><em>Loading...</em></p>
+            ? <p>
+                <em>Loading...</em>
+            </p>
             : this.renderTestTable(this.state.resulting, this.state.questionList, this.state.answerList, this.state.User_);
 
         return <div className='lolikk'>
-            <label className='lolik'>–ÓÁÔÓ‰≥Î Ì‡ ‘‡ÍÛÎ¸ÚÂÚ</label>
+            <label className='lolik'>
+                <div>
+                Faculty Distribution 
+                </div>
+            </label>
             <p />
             {contents}
         </div>;
@@ -585,29 +610,30 @@ export class FacultyTest extends React.Component<RouteComponentProps<{}>, FetchT
                         </div>
                         <br />
                     </> : null)}
+
             <form className='row-md-3 zol' onSubmit={this.handleSave}>
                 {result.map(r =>
-                    this.state.result != "" ?
-                        this.state.check ?
-                            this.state.result == r.result ?
-                        <div>
-                            <input hidden
-                            className=""
-                            type="text"
-                            name="Faculty_Image"
-                            defaultValue={this.state.result == r.result ? r.resultImage.toString() : ""} />
-                        <img defaultValue={this.state.path + r.result == this.state.result ? r.resultImage : ""}
-                                        width="200" height="200" src={this.state.path + (r.result == this.state.result ? r.resultImage : "")} />
-                                    <input className='buta' type="text" name="Faculty" defaultValue={this.state.result} /><span />
-                                </div>
+                    <>
+                        {user_.map(u =>
+                            this.state.result !== "" ?
+                                this.state.check ?
+                                    this.state.result == r.result ?
+                                        <div>
+                                            <input hidden type="text" name="FacultyImage" defaultValue={this.state.result == r.result ? r.resultImage.toString() : "bg"} />
+                                            <img defaultValue={this.state.path + r.result == this.state.result ? r.resultImage : ""}
+                                                width="200" height="200" src={this.state.path + (r.result == this.state.result ? r.resultImage : "")} />
+                                            <input type="text" name="Id" defaultValue={u.userId.toString()} />
+                                            <input className='buta' type="text" name="Faculty" defaultValue={this.state.result} /><span />
+                                        </div>
+                                        : null
+                                    : null
                                 : null
-                            : null
-                        : null
+                        )}
+                    </>
                 )}
-               
-                <UserName/>
-            <button className='buta'><NavLink to='/'>œÓ‚ÂÌÛÚËÒ¸</NavLink></button>
-            <button id='12' className='row-md-3 buta' type="submit">«‡‚Â¯ËÚË</button>
+                <UserName />
+                <button className='buta' type="submit">–ó–∞–≤–µ—Ä—à–∏—Ç–∏</button>
+                <button className='buta'><NavLink to='/'>–ü–æ–≤–µ—Ä–Ω—É—Ç–∏—Å—å</NavLink></button>
             </form>
         </form>;
     }
@@ -636,7 +662,8 @@ export class TestResult {
     resultImage: string = "";
 }
 export class UserContent {
-    userId: number = 0;
+    id: number = 0;
+    userName: string = "";
     wand: string = "";
     wandImage: string = "";
     faculty: string = "";

@@ -1,4 +1,4 @@
-import * as React from 'react';
+Ôªøimport * as React from 'react';
 import '../../App.css';
 import { TestSection }from './TestSection'
 import Spinner from '../Home/Spinner'
@@ -6,13 +6,19 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { RouteComponentProps } from 'react-router';
 import { UserContent } from '../test/FacultyTest'
 var s;
+var nickname;
 const Photo = () =>
 {
     const { isLoading, user } = useAuth0();
     s = user?.email;
+    nickname = user?.nickname;
+    console.log("email? " + nickname)
     return (
-        <><img className='imgpre' src={isLoading ? "" : user?.picture}></img></>
-  )
+        <>
+            <img className='imgpre' src={isLoading ? "" : user?.picture}></img>
+        </>
+    )
+
 }
 const AccauntInfo = () =>
     {
@@ -39,7 +45,7 @@ const Accaunt = () =>
       const {isLoading, isAuthenticated, user} = useAuth0();
       return(
       <div className='account'>
-      <form>
+      <form >
         <div className='wrapper1'>
           <div className='form-wrapper1'>
             <div className="email">
@@ -141,34 +147,33 @@ export class Profile extends React.Component<RouteComponentProps<{}>, filedata> 
             <br/>
             <div className='profileinformation'>
                   <div className='profilecontent'>
-                     {user.map(u => 
-                         <div className={u.faculty == "•ËÙ≥Ì‰Ó" ? "Gryf" :
-                          u.faculty == "—Î≥ÁÂ≥Ì" ? "Sliz" :
-                              u.faculty == "’‡ÙÂÎÔ‡Ù" ? "Huff" :
-                                     u.faculty == "–ÂÈ‚ÂÌÍÎÓ" ? "Rav" :"NameOfFaculty"}>
-                         </div>)}
+                      {user.map(u =>
+                          <div className={u.faculty}>
+                              <div>s
+                                  <p></p>{console.log("–§–∞–∫—É–ª—å—Ç–µ—Ç " + u.faculty + "\n nick: " + nickname)}
+                              </div>
+
+                          </div>
+                      )}
                       <div className='labell'>
-                          {user.map(u => u.faculty ? u.faculty : "Name Of Faculty")}
+                          {user.map(u => u.userName == nickname ? u.faculty : "Faculty")}
                       </div>
                   </div>
               <div className='profilecontent'>
                       {user.map(u =>
-                          <div className={u.faculty == "•ËÙ≥Ì‰Ó" ? "Patr" :
-                              u.faculty == "—Î≥ÁÂ≥Ì" ? "Patr" :
-                                  u.faculty == "’‡ÙÂÎÔ‡Ù" ? "Patr" :
-                                      u.faculty == "–ÂÈ‚ÂÌÍÎÓ" ? "Patr" : "Patronus"}>
+                          <div className={u.patronus}>
                           </div>)}
                   <br />
                       <div className='labell'>
-                          {user.map(u => u.patronus ? u.patronus : "Patronus")}
+                          {user.map(u => u.userName == nickname ? u.patronus : "Patronus")}
                 </div>
               </div>
               <div className='profilecontent'>
                       {user.map(u =>
-                          <div className={u.faculty == "•ËÙ≥Ì‰Ó" ? "W" :
-                              u.faculty == "—Î≥ÁÂ≥Ì" ? "W" :
-                                  u.faculty == "’‡ÙÂÎÔ‡Ù" ? "W" :
-                                      u.faculty == "–ÂÈ‚ÂÌÍÎÓ" ? "W" : "Wand"}>
+                          <div className={u.faculty == "“ê—Ä–∏—Ñ—ñ–Ω–¥–æ—Ä" ? "W" :
+                              u.faculty == "–°–ª—ñ–∑–µ—Ä—ñ–Ω" ? "W" :
+                                  u.faculty == "–•–∞—Ñ–µ–ª–ø–∞—Ñ" ? "W" :
+                                      u.faculty == "–†–µ–π–≤–µ–Ω–∫–ª–æ" ? "W" : "Wand"}>
                           </div>)}
                  <br />
                 <div className='labell'>

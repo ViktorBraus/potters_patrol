@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\korol\\Source\\Repos\\ViktorBraus\\potters_patrol\\wwwroot\\dist\\89889688147bd7575d6327160d64e760.svg",
+      "PackagePath": "staticwebassets\\dist\\89889688147bd7575d6327160d64e760.svg"
+    },
+    {
+      "Id": "C:\\Users\\korol\\Source\\Repos\\ViktorBraus\\potters_patrol\\wwwroot\\dist\\main.js",
+      "PackagePath": "staticwebassets\\dist\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\korol\\Source\\Repos\\ViktorBraus\\potters_patrol\\wwwroot\\dist\\main.js.map",
+      "PackagePath": "staticwebassets\\dist\\main.js.map"
+    },
+    {
+      "Id": "C:\\Users\\korol\\Source\\Repos\\ViktorBraus\\potters_patrol\\wwwroot\\dist\\vendor-manifest.json",
+      "PackagePath": "staticwebassets\\dist\\vendor-manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\korol\\Source\\Repos\\ViktorBraus\\potters_patrol\\wwwroot\\dist\\vendor.css",
+      "PackagePath": "staticwebassets\\dist\\vendor.css"
+    },
+    {
+      "Id": "C:\\Users\\korol\\Source\\Repos\\ViktorBraus\\potters_patrol\\wwwroot\\dist\\vendor.js",
+      "PackagePath": "staticwebassets\\dist\\vendor.js"
+    },
+    {
+      "Id": "C:\\Users\\korol\\Source\\Repos\\ViktorBraus\\potters_patrol\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Potters_Patrol.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Potters_Patrol.props",
+      "PackagePath": "build\\Potters_Patrol.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Potters_Patrol.props",
+      "PackagePath": "buildMultiTargeting\\Potters_Patrol.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Potters_Patrol.props",
+      "PackagePath": "buildTransitive\\Potters_Patrol.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

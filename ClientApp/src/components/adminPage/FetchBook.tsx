@@ -33,7 +33,7 @@ export class FetchBook extends React.Component<RouteComponentProps<{}>, FetchBoo
             <h1>Дані по книгам</h1>
             <div className="linn">
                 <NavLink to="/addBook">Створити нову книгу</NavLink>
-            <NavLink to="/Layout">Повернутись до Адмін панелі</NavLink>
+                <NavLink to="/Layout">Повернутись до Адмін панелі</NavLink>
             </div>
             {contents}
         </div>;

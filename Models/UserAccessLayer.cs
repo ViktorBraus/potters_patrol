@@ -48,11 +48,26 @@ namespace potters_patrol.Models
                 throw;
             }
         }
+
+        public int UpdateUser(User user)
+        {
+            try
+            {
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         public int UpdateUserContent(UserContent userContent)
         {
             try
             {
-                db.Entry(userContent).State = EntityState.Modified;
                 db.SaveChanges();
 
                 return 1;
@@ -67,7 +82,7 @@ namespace potters_patrol.Models
             try
             {
                 User user = db.User.Find(id);
-                return user.ProfilleImage;
+                return user.ProfileImage;
             }
             catch
             {

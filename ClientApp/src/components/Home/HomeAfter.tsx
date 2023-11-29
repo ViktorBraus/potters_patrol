@@ -5,6 +5,18 @@ import ContentBlock from './ContentBlock'
 import { Distribution } from './Distribution'
 import { TestSection } from './TestSection';
 import { RouteComponentProps } from 'react-router';
+import { useAuth0 } from "@auth0/auth0-react";
+var u;
+const UserName = () => {
+    const { user } = useAuth0();
+    u = user?.nickname;
+    return (<>
+        <input hidden name="Id" value="1" />
+        <input hidden className="form-control kk" type="text" name="UserName" defaultValue={u} required />
+    </>
+    )
+}
+
 export class HomeAfter extends React.Component<RouteComponentProps<{}>> {
     constructor(props) {
         super(props)
@@ -27,7 +39,7 @@ export class HomeAfter extends React.Component<RouteComponentProps<{}>> {
           Найбільш популярні тести
           </div>
               <TestSection/>
-          <Notifications />
+              <Notifications />
         </div>
       )
     }

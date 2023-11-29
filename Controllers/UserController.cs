@@ -17,6 +17,12 @@ namespace potters_patrol.Controllers
         {
             return objuser.GetAllUsers();
         }
+        [HttpPut]
+        [Route("api/User/Edit")]
+        public int Edit(User user)
+        {
+            return objuser.UpdateUser(user);
+        }
         [HttpGet]
         [Route("api/UserContent/Index")]
         public IEnumerable<UserContent> UserContentIndex()

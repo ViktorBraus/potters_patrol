@@ -7,20 +7,20 @@ export class Distribution extends React.Component {
     Distribution1 = () => {
         return (
             <div className='distribution'>
-                <div className="circle">
+                <div className="circle10">
+                    <a href="/faculty">
+                        <div className='imga2'
+                            alt="" />
+                    </a>
+                </div>
+                <div className="circle10">
                 <a href='/wand'>
                     <div className='imga'></div>
                     </a>
                 </div>
-                <div className="circle">
+                <div className="circle10">
                 <a href="/patronus">
                     <div className='imga1'
-                        alt="" />
-                    </a>
-                </div>
-               <div className="circle">
-                <a href="/faculty">
-                    <div className='imga2'
                         alt="" />
                     </a>
                 </div>

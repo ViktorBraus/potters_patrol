@@ -22,7 +22,7 @@ namespace Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=VIKTOR_BRAUS\\SQLEXPRESS01;Database=Potters_Patrol;Trusted_Connection=True");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-L13J1FA;Database=Potters_Patrol;Trusted_Connection=True");
             }
         }
 

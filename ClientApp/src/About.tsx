@@ -15,7 +15,7 @@ const about = () => {
 						</div>
 						<div className="profile">
 							<div className="profile__title title1">Profile</div>
-							<div className="profile__text">I`m 21 years old, living in Chernivtsi, Ukraine. For whole my life i was
+							<div className="profile__text">I`m 24 years old, living in Chernivtsi, Ukraine. For whole my life i was
 								always interested in Computer Science and tried to understand how to use this passion in future.
 								When i had to decide which profession would accomplish earning money and doing what i love most
 								i
@@ -44,6 +44,10 @@ const about = () => {
 							<div className="education__title title1">Education</div>
 							<div className="education__uni">CHERNIVTSI NATIONAL UNIVERSITY</div>
 							<div className="education__spec">2017 - 2021 | Computer Science </div>
+							<br />
+							<div className="education__uni">CHERNIVTSI NATIONAL UNIVERSITY</div>
+							<div className="education__spec">2022 - 2023 | Computer Science | MAGISTRY </div>
+							<br />
 							<div className="education__school">Chernivtsi gymnasia №7 • 2006-2017 </div>
 							<div className="education__type">Secondary Education</div>
 						</div>

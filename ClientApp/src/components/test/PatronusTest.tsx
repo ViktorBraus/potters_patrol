@@ -34,15 +34,18 @@ export class PatronusTest extends React.Component<RouteComponentProps<{}>, Fetch
 
         return <div className='lolikk'>
             <label className='lolik'>Визначення твого патронуса</label>
-            <p/>
+            <p />
+            {contents}
         </div>;
 
     }
     public renderTestTable(questionList: QuestionDetail[], answerList: AnswerDetail[]) {
         return <form className='form'>
             {questionList.map(q =>
-                q.id > 17 ? <><div className='lol'>
-                    {q.id > 17 ?
+                q.id > 17 ?
+                    <>
+                        <div className='lol'>
+                            {q.id > 17 ?
                         <>
                             <label className='lola'>{q.question}</label>
                             {answerList.map(a => <div>

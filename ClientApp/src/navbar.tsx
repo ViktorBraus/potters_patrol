@@ -2,25 +2,65 @@ import * as React from 'react'
 import {useAuth0} from "@auth0/auth0-react"
 
 interface UserData {
-    userz: UserContent
+    UserContent: UserContent[];
 }
-
+var nick;
+const UserName = () => {
+    const { user } = useAuth0();
+    nick = user?.nickname;
+    return (<>
+        <input hidden name="Id" value="1" />
+        <input hidden className="form-control kk" type="text" name="UserName" defaultValue={nick} required />
+    </>
+    )
+}
 export class NavBar extends React.Component<{}, UserData>
 {
-    constructor(props) {
-        super(props);
-        this.state = { userz: new UserContent }
+    constructor() {
+        super();
+        this.state = {
+            UserContent: [],
+        }
         fetch('api/UserContent/Index')
-            .then(response => response.json() as Promise<UserContent>)
+            .then(response => response.json() as Promise<UserContent[]>)
             .then(data => {
-                this.setState({ userz: data});
+                this.setState({ UserContent: data});
             });
-
+        this.onSiteChanged = this.onSiteChanged.bind(this);
+    }
+    public onSiteChanged(event) {
+       
     }
     public render() {
+        let content = this.renderTestTable(this.state.UserContent);
+
         return (
-            <Navbar/>
+            <div className='logo'>
+                <input type='checkbox' id="settingsbutton" className='menucursor'></input>
+                <label htmlFor="settingsbutton"></label>
+                <br/>
+                {content}
+                <Navbar />
+                <UserName />
+            </div>
+
             )
+    }
+    public renderTestTable(usercontent: UserContent[])
+    {
+        return <>
+            {usercontent.map(u => u.userName === nick ?
+                <div className='tiiitle_'>
+                    {console.log("nick is : " + nick)}
+                    {console.log("faculty is : " + u.faculty)}
+                    {u.faculty == "Слизерин" ? <div className='faculty_slyz'></div> :
+                        u.faculty == "Ґрифіндор" ? <div className='faculty_gryf'></div> :
+                            u.faculty == "Рейвенкло" ? <div className='faculty_rav'></div> :
+                                u.faculty == "Гафелпав" ? <div className='faculty_huff'></div> :
+                                    <div className='facultyimage'></div>}
+                </div>
+                : <div className='facultyimage'></div>)}
+        </>
     }
 }
 
@@ -31,14 +71,9 @@ const Navibar = () => {
         .then(response => response.json() as Promise<UserContent>)
         .then(data => {
             u = data;
-            console.log(u)
         });
     return(
-        <div className='logo'>
-
-            <input type='checkbox' id="settingsbutton" className='menucursor'></input>
-            <label htmlFor="settingsbutton"></label>
-            <div className='tiiitle_'><div className='facultyimage'></div></div>
+        <>
             <div className='tiiitle'>Potter`s Patrol</div>
             <div className='list'><ul className='nav'>
                 {auth0?.isAuthenticated ? (auth0?.user?.email == "korolenko.viktor@chnu.edu.ua" ? <li>
@@ -49,7 +84,17 @@ const Navibar = () => {
                 <li><a href="/About">
               <button className='SearchButton'></button><br />About
             </a>
-            </li>
+                </li>
+                <li>{auth0?.isAuthenticated ?
+                    <a href="http://potterspatrol.pythonanywhere.com/">
+                        <button className='Chat_button'></button>
+                        <br />Чат-Бот
+                    </a> :
+                <a href = "http://potterspatrol.pythonanywhere.com/">
+                        <button disabled className='Chat_button'></button>
+                        <br />Чат-Бот
+                    </a>}
+                </li>
                 <li>{auth0?.isAuthenticated ?
                     <a href="/profile">
                         <button className='ProfileButton'></button>
@@ -82,7 +127,7 @@ const Navibar = () => {
                             </a>}
                 </li>
             </ul></div>
-            </div>
+            </>
     )
 }
 const Navbar = () =>
@@ -92,7 +137,8 @@ const Navbar = () =>
     )
 }
 export class UserContent {
-    userId: number = 0;
+    id: number = 0;
+    userName: string = "";
     wand: string = "";
     wandImage: string = "";
     faculty: string = "";
